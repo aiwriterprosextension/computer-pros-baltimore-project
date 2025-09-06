@@ -40,13 +40,13 @@ const Footer = () => {
                     Calendly booking widget will be embedded here
                   </p>
                   <code className="text-xs bg-muted px-2 py-1 rounded">
-                    https://calendly.com/YOUR-ACCOUNT/15min
+                    https://calendly.com/aiwriterpros/15min
                   </code>
                 </div>
                 
                 <Button variant="hero" size="lg" className="mt-6" asChild>
                   <a 
-                    href="https://calendly.com/YOUR-ACCOUNT/15min" 
+                    href="https://calendly.com/aiwriterpros/15min" 
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
