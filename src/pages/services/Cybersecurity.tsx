@@ -71,7 +71,6 @@ const Cybersecurity = () => {
   ];
 
   return (
-      return (
     <div className="min-h-screen">
       {/* Title Section */}
       <section className="py-16 bg-white">
@@ -120,6 +119,7 @@ const Cybersecurity = () => {
           </div>
         </div>
       </section>
+    </div>
   );
 };
 
