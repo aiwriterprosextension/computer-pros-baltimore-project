@@ -1,11 +1,24 @@
+import React from 'react';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Brain, Zap, Clock, TrendingUp, Users, Cog, CheckCircle, ArrowRight } from "lucide-react";
-import aiImage from "@/assets/ai-enablement-service.jpg";
 
 const AIEnablement = () => {
+  const introPoints = [
+    "AI-powered process automation",
+    "Predictive analytics for smarter decisions",
+    "Custom AI chatbot and assistant integration",
+    "Local implementation and training support"
+  ];
+
+  const styles = {
+    title: { color: '#505050', fontWeight: 'bold' },
+    text: { color: '#333333' },
+    button: { backgroundColor: '#E01010', color: '#FFFFFF', '&:hover': { backgroundColor: '#B00D0D' } },
+    section: { backgroundColor: '#E0E0E0' }
+  };
+
   const services = [
     {
       icon: Brain,
@@ -81,36 +94,48 @@ const AIEnablement = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-secondary via-secondary/95 to-primary/20 py-20">
+      {/* Title Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6" style={styles.title}>
+              AI Solutions for Baltimore Businesses
+            </h1>
+            <p className="text-xl mb-8 leading-relaxed" style={styles.text}>
+              Transform your business with intelligent automation
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Two-Column Intro Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge variant="secondary" className="mb-6">
-                Transform Your Business
-              </Badge>
-              <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-                AI Enablement for Baltimore Businesses
-              </h1>
-              <p className="text-xl text-secondary-foreground/90 mb-8 leading-relaxed">
-                Harness the power of artificial intelligence to automate workflows, reduce costs, 
-                and boost productivity. We make AI accessible for small professional firms.
+              <p className="text-lg mb-6" style={styles.text}>
+                Harness the power of AI to automate workflows, cut costs, and boost productivity — with solutions 
+                designed for Baltimore's professional service firms.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="hero" size="lg" asChild>
-                  <Link to="/contact">Start AI Transformation</Link>
-                </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <Link to="/resources">AI Readiness Assessment</Link>
-                </Button>
-              </div>
+              <ul className="space-y-3 mb-8">
+                {introPoints.map((point, index) => (
+                  <li key={index} className="flex items-start">
+                    <CheckCircle className="h-6 w-6 mr-2 flex-shrink-0" style={{ color: '#E01010' }} />
+                    <span style={styles.text}>{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button className="w-full md:w-auto" style={styles.button} asChild>
+                <Link to="/contact">Book a Consultation</Link>
+              </Button>
             </div>
-            
-            <div className="relative">
+            <div>
               <img 
-                src={aiImage} 
-                alt="AI automation in business" 
-                className="rounded-lg shadow-[var(--shadow-strong)] w-full"
+                src="/images/ai-enablement-hero.jpg" 
+                alt="AI-powered business analytics dashboard"
+                className="rounded-lg shadow-lg"
+                width={800}
+                height={500}
               />
             </div>
           </div>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -5,6 +6,13 @@ import { Badge } from "@/components/ui/badge";
 import { Server, Monitor, HeadphonesIcon, Clock, Shield, Zap, CheckCircle } from "lucide-react";
 
 const ManagedServices = () => {
+  const introPoints = [
+    "24/7 network and system monitoring",
+    "Predictable monthly pricing",
+    "Reduced downtime and faster issue resolution",
+    "Local Baltimore-based support team"
+  ];
+
   const features = [
     {
       icon: Monitor,
@@ -48,6 +56,13 @@ const ManagedServices = () => {
     "Local Baltimore support team that understands your industry"
   ];
 
+  const styles = {
+    title: { color: '#505050', fontWeight: 'bold' },
+    text: { color: '#333333' },
+    button: { backgroundColor: '#E01010', color: '#FFFFFF', '&:hover': { backgroundColor: '#B00D0D' } },
+    section: { backgroundColor: '#E0E0E0' }
+  };
+
   const industries = [
     "Law Firms & Legal Services",
     "Medical & Healthcare Practices", 
@@ -60,27 +75,49 @@ const ManagedServices = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-secondary via-secondary/95 to-primary/20 py-20">
+      {/* Title Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-6">
-              Most Popular Service
-            </Badge>
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6" style={styles.title}>
               Managed IT Services for Baltimore Businesses
             </h1>
-            <p className="text-xl text-secondary-foreground/90 mb-8 leading-relaxed">
-              Complete IT infrastructure management that keeps your business running smoothly. 
-              Our proactive approach prevents problems before they happen, saving you time and money.
+            <p className="text-xl mb-8 leading-relaxed" style={styles.text}>
+              Professional technology management for growing businesses
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg" asChild>
-                <Link to="/contact">Get Free IT Assessment</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Two-Column Intro Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-lg mb-6" style={styles.text}>
+                Our managed IT services keep your business running at peak performance with proactive monitoring, 
+                expert support, and preventative care — so you can focus on growth, not tech headaches.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {introPoints.map((point, index) => (
+                  <li key={index} className="flex items-start">
+                    <CheckCircle className="h-6 w-6 mr-2 flex-shrink-0" style={{ color: '#E01010' }} />
+                    <span style={styles.text}>{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button className="w-full md:w-auto" style={styles.button} asChild>
+                <Link to="/contact">Get Your Free Assessment</Link>
               </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link to="/services/pricing">View Pricing Plans</Link>
-              </Button>
+            </div>
+            <div>
+              <img 
+                src="/images/managed-services-hero.jpg" 
+                alt="IT professional monitoring network systems"
+                className="rounded-lg shadow-lg"
+                width={800}
+                height={500}
+              />
             </div>
           </div>
         </div>
