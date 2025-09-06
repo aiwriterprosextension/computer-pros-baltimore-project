@@ -72,14 +72,14 @@ const Cybersecurity = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Title Section */}
-      <section className="py-16 bg-white">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-secondary via-secondary/95 to-primary/20 py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6" style={styles.title}>
+            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
               Cybersecurity Solutions for Baltimore Businesses
             </h1>
-            <p className="text-xl mb-8 leading-relaxed" style={styles.text}>
+            <p className="text-xl text-secondary-foreground/90 mb-8 leading-relaxed">
               Enterprise-grade protection for your digital assets
             </p>
           </div>
