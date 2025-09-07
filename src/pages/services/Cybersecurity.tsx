@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Lock, Eye, AlertTriangle, FileCheck, UserCheck, CheckCircle } from "lucide-react";
+import CalendlyPopupButton from "@/components/CalendlyPopupButton";
+import SEOHead from "@/components/SEOHead";
 
 const Cybersecurity = () => {
   const introPoints = [
@@ -72,6 +74,13 @@ const Cybersecurity = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Cybersecurity Solutions for Baltimore Businesses | Computer Pros"
+        description="Enterprise-grade cybersecurity protection for Baltimore businesses. Advanced threat detection, compliance solutions, and 24/7 monitoring. Free security assessment available."
+        keywords="cybersecurity Baltimore, IT security Baltimore, threat protection, HIPAA compliance, ransomware protection, security monitoring Baltimore"
+        canonicalUrl="https://computerpros-baltimore.com/services/cybersecurity"
+      />
+      
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-secondary via-secondary/95 to-primary/20 py-20">
         <div className="container mx-auto px-4">
@@ -103,9 +112,11 @@ const Cybersecurity = () => {
                   </li>
                 ))}
               </ul>
-              <Button className="w-full md:w-auto" style={styles.button} asChild>
-                <Link to="/contact">Get Your Free Assessment</Link>
-              </Button>
+              <CalendlyPopupButton 
+                text="Get Your Free Assessment" 
+                className="w-full md:w-auto"
+                showIcon={true}
+              />
             </div>
             <div>
               <img 
@@ -116,6 +127,100 @@ const Cybersecurity = () => {
                 height={500}
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cybersecurity Services Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="section-header">Comprehensive Cybersecurity Services</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Protect your business with enterprise-grade security solutions designed for Baltimore's 
+              professional firms and healthcare organizations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <Card key={index} className="service-card">
+                  <CardHeader>
+                    <IconComponent className="h-12 w-12 text-primary mb-4" />
+                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                    <CardDescription className="text-base">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Cyber Threat Statistics */}
+      <section className="py-20 bg-accent/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="section-header">Why Cybersecurity Matters for Baltimore Businesses</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              The cybersecurity landscape is more dangerous than ever for small and medium businesses.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {threats.map((threat, index) => (
+              <div key={index} className="flex items-start space-x-3">
+                <AlertTriangle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                <p className="text-lg">{threat}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <CalendlyPopupButton 
+              text="Protect Your Business Today" 
+              variant="hero" 
+              size="lg"
+              showIcon={true}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="section-header">Industry Compliance Expertise</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              We help Baltimore businesses meet regulatory requirements and maintain compliance 
+              with industry standards.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {compliance.map((standard, index) => (
+              <div key={index} className="text-center">
+                <div className="bg-accent p-4 rounded-lg mb-3">
+                  <FileCheck className="h-8 w-8 text-primary mx-auto" />
+                </div>
+                <p className="font-medium">{standard}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground mb-6">
+              Need help with regulatory compliance? Our cybersecurity experts can help you 
+              meet industry requirements and protect sensitive data.
+            </p>
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/services/pricing">View Compliance Packages</Link>
+            </Button>
           </div>
         </div>
       </section>

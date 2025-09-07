@@ -4,6 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Shield, Server, Zap, Cloud, Cog, Users, ArrowRight, CheckCircle } from "lucide-react";
 import heroImage from "@/assets/hero-it-services.jpg";
+import CalendlyPopupButton from "@/components/CalendlyPopupButton";
+import SEOHead from "@/components/SEOHead";
 
 const Home = () => {
   const services = [
@@ -78,6 +80,13 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Computer Pros - Baltimore Managed IT, Cybersecurity & AI Services"
+        description="Professional managed IT services, cybersecurity, and AI enablement for small businesses in Baltimore. 24/7 monitoring, expert support, and transparent pricing."
+        keywords="Baltimore IT services, managed IT Baltimore, cybersecurity Baltimore, AI business automation, Microsoft 365 Baltimore, IT support Maryland"
+        canonicalUrl="https://computerpros-baltimore.com"
+      />
+      
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-secondary via-secondary/95 to-primary/20">
         <div 
@@ -99,9 +108,12 @@ const Home = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/contact">Book a 15-minute Consult</Link>
-            </Button>
+            <CalendlyPopupButton 
+              text="Book a 15-minute Consult" 
+              variant="hero" 
+              size="lg"
+              showIcon={true}
+            />
             <Button variant="outline" size="lg" asChild>
               <Link to="/services/pricing">View Our Plans</Link>
             </Button>
