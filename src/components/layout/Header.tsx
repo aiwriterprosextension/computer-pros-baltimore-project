@@ -100,7 +100,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button variant="hero" size="lg" asChild>
+            <Button variant="hero" size="default" className="px-4 py-2 text-sm" asChild>
               <Link to="/contact">Book Consultation</Link>
             </Button>
           </div>
@@ -138,7 +138,7 @@ const Header = () => {
               <Link to="/about" className="nav-link py-2">About Us</Link>
               <Link to="/contact" className="nav-link py-2">Contact</Link>
               
-              <Button variant="hero" size="lg" className="w-full mt-4" asChild>
+              <Button variant="hero" size="default" className="w-full mt-4 px-4 py-2 text-sm" asChild>
                 <Link to="/contact">Book Consultation</Link>
               </Button>
             </div>
