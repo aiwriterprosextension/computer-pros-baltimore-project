@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail, Calendar } from "lucide-react";
+import CalendlySection from "@/components/CalendlySection";
 
 const Footer = () => {
   const legalLinks = [
@@ -13,51 +14,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-secondary text-secondary-foreground">
-      {/* Calendly Booking Section */}
-      <div className="border-b border-border/20">
-        <div className="container mx-auto px-4 py-12">
-          <div className="calendly-container max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl font-bold mb-4 text-primary">
-              Ready to Secure Your Business Technology?
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Book a free 15-minute consultation to discuss your IT needs and learn how Computer Pros 
-              can help protect and optimize your business technology in Baltimore.
-            </p>
-            
-            {/* Calendly Embed Placeholder */}
-            <div className="bg-background rounded-lg p-8 shadow-[var(--shadow-soft)]">
-              <div className="text-center">
-                <Calendar className="mx-auto h-12 w-12 text-primary mb-4" />
-                <h4 className="text-lg font-semibold mb-4">Schedule Your Free IT Consultation</h4>
-                <p className="text-muted-foreground mb-6">
-                  Select a convenient time for your 15-minute consultation
-                </p>
-                
-                {/* Calendly iframe would go here */}
-                <div className="bg-accent rounded-lg p-8 border-2 border-dashed border-primary/30">
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Calendly booking widget will be embedded here
-                  </p>
-                  <code className="text-xs bg-muted px-2 py-1 rounded">
-                    https://calendly.com/aiwriterpros/15min
-                  </code>
-                </div>
-                
-                <Button variant="hero" size="lg" className="mt-6" asChild>
-                  <a 
-                    href="https://calendly.com/aiwriterpros/15min" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    Book Now on Calendly
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CalendlySection />
 
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12">
