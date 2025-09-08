@@ -23,7 +23,7 @@ const CalendlySection = () => {
         <div className="flex justify-center">
           <div 
             className="calendly-inline-widget" 
-            data-url="https://calendly.com/aiwriterpros/15min" 
+            data-url="https://calendly.com/aiwriterpros/30min" 
             style={{ minWidth: '320px', height: '630px' }}
           ></div>
         </div>
