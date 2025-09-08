@@ -24,7 +24,7 @@ const CalendlySection = () => {
           <div 
             className="calendly-inline-widget" 
             data-url="https://calendly.com/aiwriterpros/30min" 
-            style={{ minWidth: '320px', height: '630px' }}
+            style={{ minWidth: '640px', height: '1260px' }}
           ></div>
         </div>
       </div>
