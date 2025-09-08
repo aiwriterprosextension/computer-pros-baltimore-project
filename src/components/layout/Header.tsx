@@ -32,10 +32,10 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center">
             <div className="text-2xl font-bold text-primary">Computer Pros</div>
-            <div className="text-sm text-muted-foreground hidden sm:block">
-              Baltimore IT Services
+            <div className="text-sm text-muted-foreground hidden sm:block ml-2">
+              We Make IT Work
             </div>
           </Link>
 
