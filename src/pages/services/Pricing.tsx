@@ -261,7 +261,7 @@ const Pricing = () => {
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
                   <Button variant="service" size="sm" asChild>
-                    <Link to={`/services/${service.name.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}>Learn More</Link>
+                    <Link to="/contact">Learn More</Link>
                   </Button>
                 </CardContent>
               </Card>
