@@ -43,9 +43,11 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/50f6da69-9572-4f7d-b745-a2e986b41576.png" 
+              src="/images/computer-pros-logo-optimized.webp" 
               alt="Computer Pros - We Make IT Work" 
               className="h-12 w-auto"
+              width="128"
+              height="48"
             />
           </Link>
 

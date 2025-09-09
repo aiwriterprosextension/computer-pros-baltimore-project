@@ -155,9 +155,11 @@ const FreeChecklist = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <img 
-              src="/lovable-uploads/50f6da69-9572-4f7d-b745-a2e986b41576.png" 
+              src="/images/computer-pros-logo-optimized.webp" 
               alt="Computer Pros - We Make IT Work" 
               className="h-16 w-auto mx-auto mb-6"
+              width="170"
+              height="64"
             />
             <h2 className="text-3xl font-bold text-primary text-center mb-8">
               Your Free IT Assessment Checklist
