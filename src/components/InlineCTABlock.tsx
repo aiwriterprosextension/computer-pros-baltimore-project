@@ -19,7 +19,7 @@ const InlineCTABlock = ({
   return (
     <section className={`py-12 ${className}`}>
       <div className="max-w-6xl mx-auto px-4">
-        <div className="bg-muted rounded-lg py-12 px-6 text-center">
+        <div className="bg-[#E0E0E0] rounded-lg py-12 px-6 text-center">
           <h2 className="text-3xl font-semibold text-secondary mb-4">
             {headline}
           </h2>
