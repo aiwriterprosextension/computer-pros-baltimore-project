@@ -54,6 +54,13 @@ const Footer = () => {
               <li><Link to="/services/ai-enablement" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">AI Enablement</Link></li>
               <li><Link to="/services/pricing" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Pricing</Link></li>
             </ul>
+            
+            <h4 className="font-semibold text-primary-foreground mb-4 mt-6">Resources</h4>
+            <ul className="space-y-2">
+              <li><Link to="/free-checklist" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Free Checklist</Link></li>
+              <li><Link to="/booking" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Book Assessment</Link></li>
+              <li><Link to="/blog" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Blog</Link></li>
+            </ul>
           </div>
 
           {/* Legal Links */}

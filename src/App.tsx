@@ -22,6 +22,9 @@ import DataProcessingAgreement from "./pages/legal/DataProcessingAgreement";
 import CookiePolicy from "./pages/legal/CookiePolicy";
 import BusinessAssociateAgreement from "./pages/legal/BusinessAssociateAgreement";
 import NotFound from "./pages/NotFound";
+import Booking from "./pages/Booking";
+import FreeChecklist from "./pages/FreeChecklist";
+import ChecklistThankYou from "./pages/ChecklistThankYou";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +52,11 @@ const App = () => (
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            
+            {/* Funnel Pages */}
+            <Route path="/booking" element={<Booking />} />
+            <Route path="/free-checklist" element={<FreeChecklist />} />
+            <Route path="/checklist-thank-you" element={<ChecklistThankYou />} />
             
             {/* Legal Pages */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

@@ -32,11 +32,12 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-primary">Computer Pros</div>
-            <div className="text-sm text-muted-foreground hidden sm:block">
-              Baltimore IT Services
-            </div>
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/lovable-uploads/50f6da69-9572-4f7d-b745-a2e986b41576.png" 
+              alt="Computer Pros - We Make IT Work" 
+              className="h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -97,12 +98,19 @@ const Header = () => {
             >
               Contact
             </Link>
+            
+            <Link 
+              to="/booking" 
+              className={`nav-link ${isActive('/booking') ? 'text-primary font-semibold' : ''}`}
+            >
+              Book Consultation
+            </Link>
           </nav>
 
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Button variant="hero" size="default" className="px-4 py-2 text-sm" asChild>
-              <Link to="/contact">Book Consultation</Link>
+              <Link to="/free-checklist">Free Checklist</Link>
             </Button>
           </div>
 
@@ -138,9 +146,10 @@ const Header = () => {
               <Link to="/blog" className="nav-link py-2">Blog</Link>
               <Link to="/about" className="nav-link py-2">About Us</Link>
               <Link to="/contact" className="nav-link py-2">Contact</Link>
+              <Link to="/booking" className="nav-link py-2">Book Consultation</Link>
               
               <Button variant="hero" size="default" className="w-full mt-4 px-4 py-2 text-sm" asChild>
-                <Link to="/contact">Book Consultation</Link>
+                <Link to="/free-checklist">Free Checklist</Link>
               </Button>
             </div>
           </nav>
