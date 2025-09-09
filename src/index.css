@@ -22,7 +22,7 @@
 
     /* Charcoal Gray from Logo */
     --secondary: 0 0% 31%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary-foreground: 0 0% 95%;
 
     /* Light Surface Gray */
     --muted: 0 0% 88%;
@@ -30,7 +30,7 @@
 
     /* Accent Red Lighter */
     --accent: 0 85% 95%;
-    --accent-foreground: 0 93% 44%;
+    --accent-foreground: 0 93% 40%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
