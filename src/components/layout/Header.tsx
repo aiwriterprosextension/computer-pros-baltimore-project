@@ -33,6 +33,7 @@ const Header = () => {
     { title: "Property Managers", href: "/industries/property-managers" },
     { title: "Medical Offices", href: "/industries/medical-offices" },
     { title: "Accountants", href: "/industries/accountants" },
+    { title: "Professional Services", href: "/industries/professional-services" },
   ];
 
   return (

@@ -30,6 +30,7 @@ import DentalPractices from "./pages/industries/DentalPractices";
 import PropertyManagers from "./pages/industries/PropertyManagers";
 import MedicalOffices from "./pages/industries/MedicalOffices";
 import Accountants from "./pages/industries/Accountants";
+import ProfessionalServices from "./pages/industries/ProfessionalServices";
 
 const queryClient = new QueryClient();
 
@@ -64,6 +65,7 @@ const App = () => (
             <Route path="/industries/property-managers" element={<PropertyManagers />} />
             <Route path="/industries/medical-offices" element={<MedicalOffices />} />
             <Route path="/industries/accountants" element={<Accountants />} />
+            <Route path="/industries/professional-services" element={<ProfessionalServices />} />
             
             {/* Funnel Pages */}
             <Route path="/booking" element={<Booking />} />

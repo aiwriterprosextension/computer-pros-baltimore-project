@@ -111,6 +111,12 @@ const Home = () => {
       title: "Accountants",
       description: "Cloud IT and fraud detection for financial firms",
       href: "/industries/accountants"
+    },
+    {
+      icon: Users,
+      title: "Professional Services",
+      description: "Reliable IT for consultants, agencies, and service firms",
+      href: "/industries/professional-services"
     }
   ];
 
