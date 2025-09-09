@@ -366,6 +366,21 @@ const Home = () => {
                 </Button>
               </CardContent>
             </Card>
+
+            <Card className="service-card">
+              <CardHeader>
+                <Lock className="h-12 w-12 text-primary mb-4" />
+                <CardTitle>Cybersecurity Risk Score Calculator</CardTitle>
+                <CardDescription>
+                  Get a quick snapshot of your business's security posture.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="service" className="w-full" asChild>
+                  <Link to="/tools/security-score">Check Risk Score</Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
