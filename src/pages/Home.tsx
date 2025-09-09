@@ -2,10 +2,13 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Server, Zap, Cloud, Cog, Users, ArrowRight, CheckCircle } from "lucide-react";
+import { Shield, Server, Zap, Cloud, Cog, Users, ArrowRight, CheckCircle, Calculator, ShieldCheck, ClipboardCheck, Briefcase } from "lucide-react";
 import heroImage from "@/assets/hero-it-services.jpg";
 import CalendlyPopupButton from "@/components/CalendlyPopupButton";
 import SEOHead from "@/components/SEOHead";
+import InlineCTABlock from "@/components/InlineCTABlock";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
+import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 const Home = () => {
   const services = [
@@ -78,6 +81,39 @@ const Home = () => {
     "Scalable solutions that grow with your business"
   ];
 
+  const industries = [
+    {
+      icon: Briefcase,
+      title: "Law Firms",
+      description: "Secure IT and compliance support for legal practices",
+      href: "/industries/law-firms"
+    },
+    {
+      icon: Shield,
+      title: "Dentists",
+      description: "HIPAA-grade cybersecurity for dental offices",
+      href: "/industries/dental-practices"
+    },
+    {
+      icon: Server,
+      title: "Property Managers",
+      description: "Smart IT and automation for tenant operations",
+      href: "/industries/property-managers"
+    },
+    {
+      icon: Cog,
+      title: "Medical Offices",
+      description: "AI-powered scheduling and EMR support",
+      href: "/industries/medical-offices"
+    },
+    {
+      icon: Calculator,
+      title: "Accountants",
+      description: "Cloud IT and fraud detection for financial firms",
+      href: "/industries/accountants"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <SEOHead 
@@ -108,12 +144,9 @@ const Home = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <CalendlyPopupButton 
-              text="Book a 15-minute Consult" 
-              variant="hero" 
-              size="lg"
-              showIcon={true}
-            />
+            <Button variant="hero" size="lg" asChild>
+              <Link to="/free-checklist">Take the Free IT Checklist</Link>
+            </Button>
             <Button variant="outline" size="lg" asChild>
               <Link to="/services/pricing">View Our Plans</Link>
             </Button>
@@ -179,11 +212,69 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Resources Highlights */}
+      {/* Testimonial Carousel */}
+      <TestimonialCarousel />
+
+      {/* AI Enablement Feature */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="section-header">AI-Powered Productivity</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+            Implement AI tools to automate workflows and boost productivity.
+          </p>
+          <div className="bg-accent/50 rounded-lg p-8 max-w-4xl mx-auto">
+            <div className="flex items-center justify-center mb-4">
+              <Zap className="h-12 w-12 text-primary" />
+            </div>
+            <p className="text-2xl font-semibold text-secondary mb-4">
+              Save 10+ hours/month with smart automation tools
+            </p>
+            <Button variant="hero" asChild>
+              <Link to="/services/ai-enablement">Learn About AI Services</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Industries We Serve */}
       <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="section-header">Free IT Resources for Baltimore Businesses</h2>
+            <h2 className="section-header">Who We Serve</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Specialized IT solutions for Baltimore's professional service firms.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {industries.map((industry, index) => {
+              const IconComponent = industry.icon;
+              return (
+                <Card key={index} className="service-card text-center">
+                  <CardHeader>
+                    <IconComponent className="h-12 w-12 text-primary mx-auto mb-4" />
+                    <CardTitle className="text-xl">{industry.title}</CardTitle>
+                    <CardDescription className="text-base">
+                      {industry.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <Button variant="service" className="w-full" asChild>
+                      <Link to={industry.href}>Learn More</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Free Tools Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="section-header">Free Tools for Baltimore Businesses</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Access our free tools and guides to improve your business technology and security.
             </p>
@@ -192,6 +283,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="service-card">
               <CardHeader>
+                <Calculator className="h-12 w-12 text-primary mb-4" />
                 <CardTitle>Office IT Cost Calculator</CardTitle>
                 <CardDescription>
                   Calculate your current IT spending and identify potential savings.
@@ -199,13 +291,14 @@ const Home = () => {
               </CardHeader>
               <CardContent>
                 <Button variant="service" className="w-full" asChild>
-                  <Link to="/resources">Try Calculator</Link>
+                  <Link to="/tools/it-cost">Try Calculator</Link>
                 </Button>
               </CardContent>
             </Card>
 
             <Card className="service-card">
               <CardHeader>
+                <ShieldCheck className="h-12 w-12 text-primary mb-4" />
                 <CardTitle>Phishing Quick Test</CardTitle>
                 <CardDescription>
                   Test your ability to identify phishing emails and improve your security awareness.
@@ -213,27 +306,31 @@ const Home = () => {
               </CardHeader>
               <CardContent>
                 <Button variant="service" className="w-full" asChild>
-                  <Link to="/resources">Take Test</Link>
+                  <Link to="/tools/phishing-test">Take Test</Link>
                 </Button>
               </CardContent>
             </Card>
 
             <Card className="service-card">
               <CardHeader>
+                <ClipboardCheck className="h-12 w-12 text-primary mb-4" />
                 <CardTitle>IT Security Checklist</CardTitle>
                 <CardDescription>
-                  Download our comprehensive security checklist for small businesses.
+                  See if your business is at risk with our comprehensive checklist.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <Button variant="service" className="w-full" asChild>
-                  <Link to="/resources">Download Guide</Link>
+                  <Link to="/free-checklist">Get Checklist</Link>
                 </Button>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
+
+      {/* Inline CTA */}
+      <InlineCTABlock />
 
       {/* Blog Highlights */}
       <section className="py-20 bg-background">
@@ -272,6 +369,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Sticky Mobile CTA */}
+      <StickyMobileCTA />
     </div>
   );
 };

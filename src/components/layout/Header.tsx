@@ -27,6 +27,14 @@ const Header = () => {
     { title: "Support Plans & Pricing", href: "/services/pricing" },
   ];
 
+  const industryLinks = [
+    { title: "Law Firms", href: "/industries/law-firms" },
+    { title: "Dentists", href: "/industries/dental-practices" },
+    { title: "Property Managers", href: "/industries/property-managers" },
+    { title: "Medical Offices", href: "/industries/medical-offices" },
+    { title: "Accountants", href: "/industries/accountants" },
+  ];
+
   return (
     <header className="bg-background border-b border-border sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4 py-4">
@@ -62,6 +70,23 @@ const Header = () => {
                             className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
                             <div className="text-sm font-medium leading-none">{service.title}</div>
+                          </Link>
+                        </NavigationMenuLink>
+                      ))}
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="nav-link">Industries</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-3 p-6 w-[400px] lg:w-[500px]">
+                      {industryLinks.map((industry) => (
+                        <NavigationMenuLink key={industry.href} asChild>
+                          <Link
+                            to={industry.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{industry.title}</div>
                           </Link>
                         </NavigationMenuLink>
                       ))}
@@ -138,6 +163,19 @@ const Header = () => {
                     className="nav-link py-1 pl-4 block text-sm"
                   >
                     {service.title}
+                  </Link>
+                ))}
+              </div>
+              
+              <div className="space-y-2">
+                <div className="font-semibold text-primary">Industries</div>
+                {industryLinks.map((industry) => (
+                  <Link 
+                    key={industry.href}
+                    to={industry.href} 
+                    className="nav-link py-1 pl-4 block text-sm"
+                  >
+                    {industry.title}
                   </Link>
                 ))}
               </div>

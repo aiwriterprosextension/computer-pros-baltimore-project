@@ -25,6 +25,11 @@ import NotFound from "./pages/NotFound";
 import Booking from "./pages/Booking";
 import FreeChecklist from "./pages/FreeChecklist";
 import ChecklistThankYou from "./pages/ChecklistThankYou";
+import LawFirms from "./pages/industries/LawFirms";
+import DentalPractices from "./pages/industries/DentalPractices";
+import PropertyManagers from "./pages/industries/PropertyManagers";
+import MedicalOffices from "./pages/industries/MedicalOffices";
+import Accountants from "./pages/industries/Accountants";
 
 const queryClient = new QueryClient();
 
@@ -52,6 +57,13 @@ const App = () => (
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            
+            {/* Industry Pages */}
+            <Route path="/industries/law-firms" element={<LawFirms />} />
+            <Route path="/industries/dental-practices" element={<DentalPractices />} />
+            <Route path="/industries/property-managers" element={<PropertyManagers />} />
+            <Route path="/industries/medical-offices" element={<MedicalOffices />} />
+            <Route path="/industries/accountants" element={<Accountants />} />
             
             {/* Funnel Pages */}
             <Route path="/booking" element={<Booking />} />
