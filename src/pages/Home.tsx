@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Server, Zap, Cloud, Cog, Users, ArrowRight, CheckCircle, Calculator, ShieldCheck, ClipboardCheck, Briefcase, Brain, Lock } from "lucide-react";
+import { Shield, Server, Zap, Cloud, Cog, Users, ArrowRight, CheckCircle, Calculator, ShieldCheck, ClipboardCheck, Briefcase, Brain, Lock, MonitorSpeaker } from "lucide-react";
 import heroImage from "@/assets/hero-it-services.jpg";
 import SEOHead from "@/components/SEOHead";
 import InlineCTABlock from "@/components/InlineCTABlock";
@@ -324,15 +324,30 @@ const Home = () => {
 
             <Card className="service-card">
               <CardHeader>
-                <ClipboardCheck className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>IT Security Checklist</CardTitle>
+                <MonitorSpeaker className="h-12 w-12 text-primary mb-4" />
+                <CardTitle>Remote Work Security Assessment</CardTitle>
                 <CardDescription>
-                  See if your business is at risk with our comprehensive checklist.
+                  Evaluate the security readiness of your remote or hybrid workforce.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <Button variant="service" className="w-full" asChild>
-                  <Link to="/free-checklist">Get Checklist</Link>
+                  <Link to="/remote-work-assessment">Take Assessment</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="service-card">
+              <CardHeader>
+                <ShieldCheck className="h-12 w-12 text-primary mb-4" />
+                <CardTitle>Compliance Gap Analyzer</CardTitle>
+                <CardDescription>
+                  Identify gaps in your business's compliance with key regulations like HIPAA or GDPR.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="service" className="w-full" asChild>
+                  <Link to="/compliance-gap-analyzer">Analyze Compliance</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -348,21 +363,6 @@ const Home = () => {
               <CardContent>
                 <Button variant="service" className="w-full" asChild>
                   <Link to="/tools/ai-finder">Find AI Tools</Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="service-card">
-              <CardHeader>
-                <Lock className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Cybersecurity Risk Score Calculator</CardTitle>
-                <CardDescription>
-                  Get a quick snapshot of your business's security posture.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button variant="service" className="w-full" asChild>
-                  <Link to="/tools/security-score">Check Risk Score</Link>
                 </Button>
               </CardContent>
             </Card>
