@@ -17,15 +17,32 @@ const CalendlyPopupButton = ({
   className = "",
   showIcon = false 
 }: CalendlyPopupButtonProps) => {
-  const handleCalendlyClick = (e: React.MouseEvent) => {
+  const loadCalendlyScript = (): Promise<void> => {
+    return new Promise((resolve, reject) => {
+      if ((window as any).Calendly) {
+        resolve();
+        return;
+      }
+      
+      const script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error('Failed to load Calendly script'));
+      document.head.appendChild(script);
+    });
+  };
+
+  const handleCalendlyClick = async (e: React.MouseEvent) => {
     e.preventDefault();
-    // Check if Calendly is loaded
-    if (typeof window !== 'undefined' && (window as any).Calendly) {
+    
+    try {
+      await loadCalendlyScript();
       (window as any).Calendly.initPopupWidget({
         url: 'https://calendly.com/aiwriterpros/15min'
       });
-    } else {
-      // Fallback to direct link if Calendly script isn't loaded
+    } catch (error) {
+      // Fallback to direct link if script loading fails
       window.open('https://calendly.com/aiwriterpros/15min', '_blank');
     }
   };
