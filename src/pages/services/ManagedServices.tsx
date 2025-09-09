@@ -112,7 +112,7 @@ const ManagedServices = () => {
             </div>
             <div>
               <img 
-                src="/images/managed-services-hero.jpg" 
+                src="/images/managed-services-hero.png" 
                 alt="IT professional monitoring network systems"
                 className="rounded-lg shadow-lg"
                 width={800}
