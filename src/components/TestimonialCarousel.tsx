@@ -85,14 +85,18 @@ const TestimonialCarousel = () => {
 
           <div className="flex justify-center space-x-2 mt-6">
             {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentIndex ? 'bg-primary' : 'bg-muted-foreground/30'
-                }`}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-6 h-6 rounded-full transition-colors flex items-center justify-center ${
+                    index === currentIndex ? 'bg-primary/20' : 'bg-muted-foreground/10'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                >
+                  <div className={`w-3 h-3 rounded-full transition-colors ${
+                    index === currentIndex ? 'bg-primary' : 'bg-muted-foreground/30'
+                  }`} />
+                </button>
             ))}
           </div>
         </div>
