@@ -44,7 +44,7 @@ const Footer = () => {
 
           {/* Free Resources */}
           <div className="lg:ml-4">
-            <h4 className="font-semibold text-[#E01010] mb-4">Free Resources</h4>
+            <h3 className="font-semibold text-[#E01010] mb-4">Free Resources</h3>
             <ul className="space-y-2">
               <li><Link to="/free-checklist" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">IT Checklist</Link></li>
               <li><Link to="/tools/it-cost" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Cost Calculator</Link></li>
@@ -56,7 +56,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-[#E01010] mb-4">Services</h4>
+            <h3 className="font-semibold text-[#E01010] mb-4">Services</h3>
             <ul className="space-y-2">
               <li><Link to="/services/managed-services" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Managed Services</Link></li>
               <li><Link to="/services/cybersecurity" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Cybersecurity</Link></li>
@@ -67,7 +67,7 @@ const Footer = () => {
 
           {/* Legal Links */}
           <div>
-            <h4 className="font-semibold text-[#E01010] mb-4">Legal</h4>
+            <h3 className="font-semibold text-[#E01010] mb-4">Legal</h3>
             <ul className="space-y-2">
               {legalLinks.map((link) => (
                 <li key={link.href}>
