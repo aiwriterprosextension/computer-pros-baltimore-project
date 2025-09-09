@@ -2,13 +2,18 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Server, Zap, Cloud, Cog, Users, ArrowRight, CheckCircle, Calculator, ShieldCheck, ClipboardCheck, Briefcase } from "lucide-react";
+import { Shield, Server, Zap, Cloud, Cog, Users, ArrowRight, CheckCircle, Calculator, ShieldCheck, ClipboardCheck, Briefcase, Brain, Lock } from "lucide-react";
 import heroImage from "@/assets/hero-it-services.jpg";
-import CalendlyPopupButton from "@/components/CalendlyPopupButton";
 import SEOHead from "@/components/SEOHead";
 import InlineCTABlock from "@/components/InlineCTABlock";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import HeroCards from "@/components/HeroCards";
+import TrustMetricsBar from "@/components/TrustMetricsBar";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import MiniCaseStudies from "@/components/MiniCaseStudies";
+import FAQSection from "@/components/FAQSection";
+import EmergencySupportButton from "@/components/EmergencySupportButton";
 
 const Home = () => {
   const services = [
@@ -158,19 +163,16 @@ const Home = () => {
             </Button>
           </div>
 
-          {/* Benefits List */}
-          <div className="max-w-2xl mx-auto">
-            <ul className="space-y-3 text-left">
-              {benefits.map((benefit, index) => (
-                <li key={index} className="flex items-center space-x-3">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span className="text-secondary-foreground/80">{benefit}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Hero Cards */}
+          <HeroCards />
         </div>
       </section>
+
+      {/* Trust Metrics Bar */}
+      <TrustMetricsBar />
+
+      {/* Why Choose Us */}
+      <WhyChooseUs />
 
       {/* Services Overview */}
       <section className="py-20 bg-background">
@@ -220,6 +222,9 @@ const Home = () => {
 
       {/* Testimonial Carousel */}
       <TestimonialCarousel />
+
+      {/* Mini Case Studies */}
+      <MiniCaseStudies />
 
       {/* AI Enablement Feature */}
       <section className="py-20 bg-background">
@@ -331,6 +336,36 @@ const Home = () => {
                 </Button>
               </CardContent>
             </Card>
+
+            <Card className="service-card">
+              <CardHeader>
+                <Brain className="h-12 w-12 text-primary mb-4" />
+                <CardTitle>AI Tool Finder for SMBs</CardTitle>
+                <CardDescription>
+                  Discover AI tools that fit your business goals and budget.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="service" className="w-full" asChild>
+                  <Link to="/tools/ai-finder">Find AI Tools</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="service-card">
+              <CardHeader>
+                <Lock className="h-12 w-12 text-primary mb-4" />
+                <CardTitle>Cybersecurity Risk Score Calculator</CardTitle>
+                <CardDescription>
+                  Get a quick snapshot of your business's security posture.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button variant="service" className="w-full" asChild>
+                  <Link to="/tools/security-score">Check Risk Score</Link>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -375,6 +410,12 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQSection />
+
+      {/* Emergency Support Button */}
+      <EmergencySupportButton />
 
       {/* Sticky Mobile CTA */}
       <StickyMobileCTA />
