@@ -131,7 +131,7 @@ const AIEnablement = () => {
             </div>
             <div>
               <img 
-                src="/images/ai-enablement-hero.jpg" 
+                src="/images/ai-enablement-hero.png" 
                 alt="AI-powered business analytics dashboard"
                 className="rounded-lg shadow-lg"
                 width={800}
