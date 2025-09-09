@@ -123,13 +123,6 @@ const Header = () => {
             >
               Contact
             </Link>
-            
-            <Link 
-              to="/booking" 
-              className={`nav-link ${isActive('/booking') ? 'text-primary font-semibold' : ''}`}
-            >
-              Book Consultation
-            </Link>
           </nav>
 
           {/* CTA Button */}
@@ -184,7 +177,6 @@ const Header = () => {
               <Link to="/blog" className="nav-link py-2">Blog</Link>
               <Link to="/about" className="nav-link py-2">About Us</Link>
               <Link to="/contact" className="nav-link py-2">Contact</Link>
-              <Link to="/booking" className="nav-link py-2">Book Consultation</Link>
               
               <Button variant="hero" size="default" className="w-full mt-4 px-4 py-2 text-sm" asChild>
                 <Link to="/free-checklist">Free Checklist</Link>
