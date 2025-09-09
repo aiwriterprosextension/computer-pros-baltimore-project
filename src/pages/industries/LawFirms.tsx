@@ -249,6 +249,14 @@ const LawFirms = () => {
         {
           question: "Is remote access secure for attorneys?",
           answer: "We implement encrypted VPNs, MFA, and device-level protections for secure remote access."
+        },
+        {
+          question: "How do you ensure attorney-client privilege in IT systems?",
+          answer: "We implement role-based access controls, encryption, and audit trails to maintain confidentiality and privilege."
+        },
+        {
+          question: "Can you help with electronic discovery (eDiscovery) compliance?",
+          answer: "Yes, we provide secure data retention, search capabilities, and litigation hold procedures for eDiscovery requirements."
         }
       ]} />
     </div>

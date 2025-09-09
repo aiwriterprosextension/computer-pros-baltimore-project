@@ -31,6 +31,7 @@ import PropertyManagers from "./pages/industries/PropertyManagers";
 import MedicalOffices from "./pages/industries/MedicalOffices";
 import Accountants from "./pages/industries/Accountants";
 import ProfessionalServices from "./pages/industries/ProfessionalServices";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />

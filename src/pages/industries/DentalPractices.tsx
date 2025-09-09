@@ -273,6 +273,14 @@ const DentalPractices = () => {
         {
           question: "Can you prevent phishing attacks?",
           answer: "Yes. We deploy phishing simulations, email filtering, and real-time alert systems."
+        },
+        {
+          question: "How do you protect patient data during digital imaging?",
+          answer: "We implement secure DICOM protocols, encrypted storage, and access controls for all digital radiography systems."
+        },
+        {
+          question: "Can you help with patient portal security?",
+          answer: "Absolutely. We secure patient portals with multi-factor authentication, encryption, and HIPAA-compliant hosting."
         }
       ]} />
     </div>

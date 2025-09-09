@@ -124,6 +124,14 @@ const ProfessionalServices = () => {
           {
             question: "Do you offer AI tools for reporting and scheduling?",
             answer: "Absolutely. We deploy AI assistants for task automation, reporting, and calendar management."
+          },
+          {
+            question: "How do you protect intellectual property for consulting firms?",
+            answer: "We implement document security, access controls, and encrypted communication to safeguard your proprietary methodologies and client work."
+          },
+          {
+            question: "Can you help with project collaboration tools?",
+            answer: "Yes. We set up secure project management platforms, team collaboration tools, and client communication systems tailored to professional services."
           }
         ]} />
       </div>

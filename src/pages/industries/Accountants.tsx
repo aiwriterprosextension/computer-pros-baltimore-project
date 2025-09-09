@@ -303,6 +303,14 @@ const Accountants = () => {
         {
           question: "Do you offer fraud detection tools?",
           answer: "Yes. We deploy AI tools that flag anomalies and generate audit alerts."
+        },
+        {
+          question: "How do you secure client financial data during tax season?",
+          answer: "We implement encrypted file transfers, secure client portals, and access controls to protect sensitive financial information."
+        },
+        {
+          question: "Can you help with IRS e-file security requirements?",
+          answer: "Absolutely. We ensure your systems meet IRS Publication 1075 requirements for electronic filing and data protection."
         }
       ]} />
     </div>

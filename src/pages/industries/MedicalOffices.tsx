@@ -318,6 +318,14 @@ const MedicalOffices = () => {
         {
           question: "Do you offer AI tools for patient scheduling?",
           answer: "Yes. We implement AI-driven scheduling assistants and intake automation tools."
+        },
+        {
+          question: "How do you secure telemedicine platforms?",
+          answer: "We implement end-to-end encryption, secure video conferencing, and HIPAA-compliant telehealth solutions."
+        },
+        {
+          question: "Can you help with medical device integration?",
+          answer: "Absolutely. We securely connect medical devices to EMR systems while maintaining HIPAA compliance and data integrity."
         }
       ]} />
     </div>

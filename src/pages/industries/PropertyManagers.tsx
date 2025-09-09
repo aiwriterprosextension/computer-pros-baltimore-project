@@ -297,6 +297,14 @@ const PropertyManagers = () => {
         {
           question: "How do you protect tenant data?",
           answer: "We use encryption, access controls, and secure cloud backups to protect sensitive information."
+        },
+        {
+          question: "Can you integrate with smart building systems?",
+          answer: "Yes, we connect IoT devices, security systems, and building automation platforms securely to your management software."
+        },
+        {
+          question: "How do you handle multi-property IT management?",
+          answer: "We provide centralized monitoring and management across all your properties with role-based access for different locations."
         }
       ]} />
     </div>
