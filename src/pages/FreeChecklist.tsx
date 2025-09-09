@@ -137,15 +137,16 @@ const FreeChecklist = () => {
       />
 
       {/* Hero Section */}
-      <section className="bg-background py-16">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold text-primary mb-6 leading-tight">
-            Download Your Free IT Assessment Checklist
-          </h1>
-          
-          <p className="text-base text-muted-foreground mb-8 max-w-2xl mx-auto">
-            See how your IT systems stack up — and find out if your business is at risk.
-          </p>
+      <section className="bg-gradient-to-br from-secondary via-secondary/95 to-primary/20 py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
+              Download Your Free IT Assessment Checklist
+            </h1>
+            <p className="text-xl text-secondary-foreground/90 mb-8 leading-relaxed">
+              See how your IT systems stack up — and find out if your business is at risk.
+            </p>
+          </div>
         </div>
       </section>
 

@@ -15,20 +15,20 @@ const ChecklistThankYou = () => {
       />
 
       {/* Confirmation Section */}
-      <section className="bg-background py-16">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <div className="max-w-2xl mx-auto">
-            <CheckCircle className="h-16 w-16 text-primary mx-auto mb-6" />
+      <section className="bg-gradient-to-br from-secondary via-secondary/95 to-primary/20 py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <CheckCircle className="h-16 w-16 text-primary-foreground mx-auto mb-6" />
             
-            <h1 className="text-4xl font-bold text-secondary mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
               Your Checklist is on its way!
             </h1>
             
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-secondary-foreground/90 mb-8 leading-relaxed">
               Check your email for the download link.
             </p>
             
-            <div className="flex items-center justify-center gap-2 text-muted-foreground mb-12">
+            <div className="flex items-center justify-center gap-2 text-secondary-foreground/80 mb-12">
               <Mail className="h-5 w-5" />
               <span>We've sent it to your email address</span>
             </div>

@@ -9,7 +9,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import SEOHead from "@/components/SEOHead";
-import CalendlySection from "@/components/CalendlySection";
 
 const Booking = () => {
   const benefits = [
@@ -77,32 +76,16 @@ const Booking = () => {
       />
 
       {/* Hero Section */}
-      <section className="bg-background py-16">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <Badge variant="secondary" className="mb-6 text-sm font-medium">
-            Trusted by 100+ Baltimore Businesses
-          </Badge>
-          
-          <h1 className="text-4xl md:text-5xl font-bold text-secondary mb-6 leading-tight">
-            Book Your Free IT Assessment
-          </h1>
-          
-          <p className="text-base text-muted-foreground mb-8 max-w-2xl mx-auto">
-            On-site or virtual — no pressure, no sales pitch, just clarity about your IT setup.
-          </p>
-          
-          <Button 
-            variant="hero" 
-            size="lg"
-            className="mb-12"
-            onClick={() => {
-              document.getElementById('calendly-section')?.scrollIntoView({ 
-                behavior: 'smooth' 
-              });
-            }}
-          >
-            Book Now
-          </Button>
+      <section className="bg-gradient-to-br from-secondary via-secondary/95 to-primary/20 py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
+              Book Your Free IT Assessment
+            </h1>
+            <p className="text-xl text-secondary-foreground/90 mb-8 leading-relaxed">
+              On-site or virtual — no pressure, no sales pitch, just clarity about your IT setup.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -132,10 +115,6 @@ const Booking = () => {
         </div>
       </section>
 
-      {/* Calendly Section */}
-      <div id="calendly-section">
-        <CalendlySection />
-      </div>
 
       {/* Trust Section */}
       <section className="py-16 bg-muted">

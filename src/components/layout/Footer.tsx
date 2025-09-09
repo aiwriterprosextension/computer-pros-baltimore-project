@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Mail, Calendar } from "lucide-react";
-import CalendlySection from "@/components/CalendlySection";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 const Footer = () => {
   const legalLinks = [
@@ -14,13 +13,11 @@ const Footer = () => {
 
   return (
     <footer className="bg-secondary text-secondary-foreground">
-      <CalendlySection />
-
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="col-span-1 lg:col-span-2">
+          <div>
             <Link to="/" className="flex items-center space-x-2 mb-4">
               <div className="text-xl font-bold text-primary-foreground">Computer Pros</div>
             </Link>
@@ -45,7 +42,19 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Free Resources */}
+          <div>
+            <h4 className="font-semibold text-primary-foreground mb-4">Free Resources</h4>
+            <ul className="space-y-2">
+              <li><Link to="/free-checklist" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">IT Checklist</Link></li>
+              <li><Link to="/tools/it-cost" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Cost Calculator</Link></li>
+              <li><Link to="/tools/phishing-test" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Phishing Test</Link></li>
+              <li><Link to="/booking" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Book Assessment</Link></li>
+              <li><Link to="/blog" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Blog</Link></li>
+            </ul>
+          </div>
+
+          {/* Services */}
           <div>
             <h4 className="font-semibold text-primary-foreground mb-4">Services</h4>
             <ul className="space-y-2">
@@ -53,15 +62,6 @@ const Footer = () => {
               <li><Link to="/services/cybersecurity" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Cybersecurity</Link></li>
               <li><Link to="/services/ai-enablement" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">AI Enablement</Link></li>
               <li><Link to="/services/pricing" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Pricing</Link></li>
-            </ul>
-            
-            <h4 className="font-semibold text-primary-foreground mb-4 mt-6">Free Resources</h4>
-            <ul className="space-y-2">
-              <li><Link to="/free-checklist" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">IT Checklist</Link></li>
-              <li><Link to="/tools/it-cost" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Cost Calculator</Link></li>
-              <li><Link to="/tools/phishing-test" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Phishing Test</Link></li>
-              <li><Link to="/booking" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Book Assessment</Link></li>
-              <li><Link to="/blog" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Blog</Link></li>
             </ul>
           </div>
 
