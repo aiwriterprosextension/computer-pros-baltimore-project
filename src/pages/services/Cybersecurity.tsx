@@ -120,7 +120,7 @@ const Cybersecurity = () => {
             </div>
             <div>
               <img 
-                src="/images/cybersecurity-hero.jpg" 
+                src="/images/cybersecurity-hero.png" 
                 alt="Security operations center with analyst"
                 className="rounded-lg shadow-lg"
                 width={800}
