@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Shield, FileText, Clock, Users, CheckCircle, ArrowRight } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import InlineCTABlock from "@/components/InlineCTABlock";
+import FAQSection from "@/components/FAQSection";
 
 const LawFirms = () => {
   const benefits = [
@@ -95,6 +96,12 @@ const LawFirms = () => {
                 <span className="text-base text-muted-foreground">{benefit}</span>
               </div>
             ))}
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-muted-foreground">
+              Explore AI tools for legal automation → <Link to="/tools/ai-finder" className="text-primary hover:underline">AI Tool Finder</Link>
+            </p>
           </div>
         </div>
       </section>
@@ -221,13 +228,29 @@ const LawFirms = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Security Score CTA */}
       <InlineCTABlock 
-        headline="Ready to Secure Your Legal Practice?"
-        subheadline="Take our free IT checklist to identify security gaps and efficiency opportunities."
-        buttonText="Get the Free Checklist"
-        buttonLink="/free-checklist"
+        headline="Concerned about data breaches?"
+        subheadline="Get your Cybersecurity Score to identify potential security vulnerabilities."
+        buttonText="Get My Security Score"
+        buttonLink="/tools/security-score"
       />
+
+      {/* FAQ Section */}
+      <FAQSection faqs={[
+        {
+          question: "Do you support legal software like Clio or MyCase?",
+          answer: "Yes, we integrate and secure legal platforms including Clio, MyCase, and PracticePanther."
+        },
+        {
+          question: "Can you help with data retention policies?",
+          answer: "Absolutely. We assist with secure archiving, access controls, and compliance documentation."
+        },
+        {
+          question: "Is remote access secure for attorneys?",
+          answer: "We implement encrypted VPNs, MFA, and device-level protections for secure remote access."
+        }
+      ]} />
     </div>
   );
 };

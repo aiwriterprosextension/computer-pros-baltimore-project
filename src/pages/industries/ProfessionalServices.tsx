@@ -1,5 +1,7 @@
 import SEOHead from "@/components/SEOHead";
 import InlineCTABlock from "@/components/InlineCTABlock";
+import FAQSection from "@/components/FAQSection";
+import { Link } from "react-router-dom";
 
 const ProfessionalServices = () => {
   return (
@@ -69,6 +71,12 @@ const ProfessionalServices = () => {
                 <p className="text-gray-600">Use AI tools to automate scheduling, reporting, and client onboarding.</p>
               </div>
             </div>
+            
+            <div className="text-center mt-8">
+              <p className="text-gray-600">
+                Use our AI Tool Finder to streamline reporting and scheduling → <Link to="/tools/ai-finder" className="text-[#E01010] hover:underline">AI Tool Finder</Link>
+              </p>
+            </div>
           </div>
         </section>
 
@@ -95,8 +103,29 @@ const ProfessionalServices = () => {
           </div>
         </section>
 
-        {/* Inline CTA */}
-        <InlineCTABlock />
+        {/* Security Score CTA */}
+        <InlineCTABlock 
+          headline="Get a quick snapshot of your security posture"
+          subheadline="Ensure your professional services firm is protected with our free cybersecurity assessment."
+          buttonText="Get My Security Score"
+          buttonLink="/tools/security-score"
+        />
+
+        {/* FAQ Section */}
+        <FAQSection faqs={[
+          {
+            question: "What types of professional firms do you support?",
+            answer: "We serve consultants, agencies, architects, engineers, and other service-based SMBs."
+          },
+          {
+            question: "Can you help with secure client portals?",
+            answer: "Yes. We implement encrypted file sharing, secure login systems, and access controls."
+          },
+          {
+            question: "Do you offer AI tools for reporting and scheduling?",
+            answer: "Absolutely. We deploy AI assistants for task automation, reporting, and calendar management."
+          }
+        ]} />
       </div>
     </>
   );

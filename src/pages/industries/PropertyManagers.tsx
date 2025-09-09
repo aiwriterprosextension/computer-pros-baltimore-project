@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Server, Bot, Shield, Users, CheckCircle, ArrowRight, Building } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import InlineCTABlock from "@/components/InlineCTABlock";
+import FAQSection from "@/components/FAQSection";
 
 const PropertyManagers = () => {
   const benefits = [
@@ -108,6 +109,12 @@ const PropertyManagers = () => {
                 <span className="text-base text-muted-foreground">{benefit}</span>
               </div>
             ))}
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-muted-foreground">
+              Discover AI tools for tenant ticket routing → <Link to="/tools/ai-finder" className="text-primary hover:underline">AI Tool Finder</Link>
+            </p>
           </div>
         </div>
       </section>
@@ -269,13 +276,29 @@ const PropertyManagers = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Security Score CTA */}
       <InlineCTABlock 
-        headline="Ready to Automate Your Property Management?"
-        subheadline="Test your team's phishing awareness and discover automation opportunities."
-        buttonText="Take the Phishing Test"
-        buttonLink="/tools/phishing-test"
+        headline="Assess your cybersecurity risks"
+        subheadline="Get a quick assessment of your property management systems' security posture."
+        buttonText="Get My Security Score"
+        buttonLink="/tools/security-score"
       />
+
+      {/* FAQ Section */}
+      <FAQSection faqs={[
+        {
+          question: "Do you support property management platforms like AppFolio or Buildium?",
+          answer: "Yes, we secure and optimize cloud platforms used by property managers for tenant operations."
+        },
+        {
+          question: "Can you automate ticket routing?",
+          answer: "We implement AI tools that categorize and route tenant requests automatically."
+        },
+        {
+          question: "How do you protect tenant data?",
+          answer: "We use encryption, access controls, and secure cloud backups to protect sensitive information."
+        }
+      ]} />
     </div>
   );
 };

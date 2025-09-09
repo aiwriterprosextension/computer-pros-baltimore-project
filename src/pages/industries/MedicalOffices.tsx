@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Bot, Shield, Cloud, Calendar, CheckCircle, ArrowRight, Heart } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import InlineCTABlock from "@/components/InlineCTABlock";
+import FAQSection from "@/components/FAQSection";
 
 const MedicalOffices = () => {
   const benefits = [
@@ -150,6 +151,12 @@ const MedicalOffices = () => {
               </div>
             ))}
           </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-muted-foreground">
+              Find AI tools for patient intake and EMR automation → <Link to="/tools/ai-finder" className="text-primary hover:underline">AI Tool Finder</Link>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -290,13 +297,29 @@ const MedicalOffices = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Security Score CTA */}
       <InlineCTABlock 
-        headline="Ready to Transform Your Medical Practice?"
-        subheadline="Schedule a free assessment to discover how AI can improve your patient care and operations."
-        buttonText="Book Your Assessment"
-        buttonLink="/booking"
+        headline="Run a quick security check on your systems"
+        subheadline="Ensure your medical practice is protected with our free cybersecurity assessment tool."
+        buttonText="Get My Security Score"
+        buttonLink="/tools/security-score"
       />
+
+      {/* FAQ Section */}
+      <FAQSection faqs={[
+        {
+          question: "Do you support EMR systems like eClinicalWorks or Kareo?",
+          answer: "Yes, we provide secure cloud access, backup, and compliance support for leading EMR platforms."
+        },
+        {
+          question: "Can you help with HIPAA risk assessments?",
+          answer: "We conduct full HIPAA audits, provide remediation plans, and monitor ongoing compliance."
+        },
+        {
+          question: "Do you offer AI tools for patient scheduling?",
+          answer: "Yes. We implement AI-driven scheduling assistants and intake automation tools."
+        }
+      ]} />
     </div>
   );
 };

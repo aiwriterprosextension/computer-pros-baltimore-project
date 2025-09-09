@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Cloud, Shield, Bot, Calculator, CheckCircle, ArrowRight, TrendingUp } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import InlineCTABlock from "@/components/InlineCTABlock";
+import FAQSection from "@/components/FAQSection";
 
 const Accountants = () => {
   const benefits = [
@@ -138,6 +139,12 @@ const Accountants = () => {
                 <span className="text-base text-muted-foreground">{benefit}</span>
               </div>
             ))}
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-muted-foreground">
+              Explore AI tools for fraud detection and reporting → <Link to="/tools/ai-finder" className="text-primary hover:underline">AI Tool Finder</Link>
+            </p>
           </div>
         </div>
       </section>
@@ -275,13 +282,29 @@ const Accountants = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Security Score CTA */}
       <InlineCTABlock 
-        headline="Ready to Optimize Your Accounting Practice?"
-        subheadline="Use our free IT cost calculator to see how much you could save with better technology."
-        buttonText="Calculate Your Savings"
-        buttonLink="/tools/it-cost"
+        headline="Get your Cybersecurity Score before tax season"
+        subheadline="Protect your practice and client data with our free security assessment tool."
+        buttonText="Get My Security Score"
+        buttonLink="/tools/security-score"
       />
+
+      {/* FAQ Section */}
+      <FAQSection faqs={[
+        {
+          question: "Do you support accounting platforms like QuickBooks or Xero?",
+          answer: "Yes, we secure and optimize cloud accounting platforms for Baltimore firms."
+        },
+        {
+          question: "Can you help with SOC 2 or financial compliance?",
+          answer: "We offer audit support, data encryption, and access logging for compliance readiness."
+        },
+        {
+          question: "Do you offer fraud detection tools?",
+          answer: "Yes. We deploy AI tools that flag anomalies and generate audit alerts."
+        }
+      ]} />
     </div>
   );
 };

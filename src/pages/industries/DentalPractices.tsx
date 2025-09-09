@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Shield, Heart, AlertTriangle, Users, CheckCircle, ArrowRight } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import InlineCTABlock from "@/components/InlineCTABlock";
+import FAQSection from "@/components/FAQSection";
 
 const DentalPractices = () => {
   const benefits = [
@@ -137,6 +138,12 @@ const DentalPractices = () => {
               </div>
             ))}
           </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-muted-foreground">
+              Use our AI Tool Finder to automate patient scheduling → <Link to="/tools/ai-finder" className="text-primary hover:underline">AI Tool Finder</Link>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -245,13 +252,29 @@ const DentalPractices = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Security Score CTA */}
       <InlineCTABlock 
-        headline="Protect Your Patients and Your Practice"
-        subheadline="Download our free IT security checklist to identify vulnerabilities in your dental practice."
-        buttonText="Get the Security Checklist"
-        buttonLink="/free-checklist"
+        headline="Check your HIPAA security posture"
+        subheadline="Run a quick security assessment to ensure your practice is protected against cyber threats."
+        buttonText="Get My Security Score"
+        buttonLink="/tools/security-score"
       />
+
+      {/* FAQ Section */}
+      <FAQSection faqs={[
+        {
+          question: "Do you support dental EMR systems like Dentrix or Eaglesoft?",
+          answer: "Yes, we provide secure hosting, backup, and integration support for leading dental EMR platforms."
+        },
+        {
+          question: "How do you help with HIPAA compliance?",
+          answer: "We offer risk assessments, staff training, encryption, and automated compliance monitoring."
+        },
+        {
+          question: "Can you prevent phishing attacks?",
+          answer: "Yes. We deploy phishing simulations, email filtering, and real-time alert systems."
+        }
+      ]} />
     </div>
   );
 };

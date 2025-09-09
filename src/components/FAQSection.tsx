@@ -5,8 +5,17 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const FAQSection = () => {
-  const faqs = [
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface FAQSectionProps {
+  faqs?: FAQ[];
+}
+
+const FAQSection = ({ faqs }: FAQSectionProps) => {
+  const defaultFaqs = [
     {
       question: "What IT services do Baltimore businesses need most?",
       answer: "Managed IT, cybersecurity, cloud migration, and 24/7 monitoring are top priorities. Outsourced IT helps SMBs reduce costs while maintaining enterprise-grade security."
@@ -41,6 +50,8 @@ const FAQSection = () => {
     }
   ];
 
+  const faqsToDisplay = faqs || defaultFaqs;
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -53,7 +64,7 @@ const FAQSection = () => {
 
         <div className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
+            {faqsToDisplay.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
                 <AccordionTrigger className="text-left">
                   {faq.question}
