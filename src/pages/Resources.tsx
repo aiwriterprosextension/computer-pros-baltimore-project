@@ -2,60 +2,46 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calculator, Shield, Download, FileText, CheckCircle, AlertTriangle } from "lucide-react";
-import { useState } from "react";
+import { Calculator, Shield, Download, FileText, CheckCircle, AlertTriangle, Brain, MonitorSpeaker, ShieldCheck } from "lucide-react";
 
 const Resources = () => {
-  const [costData, setCostData] = useState({
-    employees: '',
-    servers: '',
-    currentItSpend: ''
-  });
-  
-  const [phishingScore, setPhishingScore] = useState(0);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-
-  const calculateCosts = () => {
-    const employees = parseInt(costData.employees) || 0;
-    const servers = parseInt(costData.servers) || 0;
-    const currentSpend = parseInt(costData.currentItSpend) || 0;
-    
-    const recommendedSpend = (employees * 150) + (servers * 200);
-    const potentialSavings = Math.max(0, currentSpend - recommendedSpend);
-    
-    return { recommendedSpend, potentialSavings };
-  };
-
-  const phishingQuestions = [
+  const toolCards = [
     {
-      question: "You receive an urgent email from your 'bank' asking you to verify your account by clicking a link. What do you do?",
-      options: [
-        "Click the link immediately to secure my account",
-        "Check the sender's email address and contact my bank directly",
-        "Forward the email to colleagues to warn them",
-        "Delete the email without reading it"
-      ],
-      correct: 1
+      icon: Calculator,
+      title: "Office IT Cost Calculator",
+      description: "Calculate your current IT spending and identify potential savings",
+      link: "/tools/it-cost"
     },
     {
-      question: "An email claims to be from Microsoft asking for your Office 365 password to 'update security settings'. What's the best response?",
-      options: [
-        "Provide the password since it's from Microsoft",
-        "Ignore it - Microsoft never asks for passwords via email",
-        "Call the number provided in the email",
-        "Change your password immediately"
-      ],
-      correct: 1
+      icon: Shield,
+      title: "Phishing Quick Test",
+      description: "Test your ability to spot phishing emails and improve security awareness",
+      link: "/tools/phishing-test"
     },
     {
-      question: "You get an email with an attachment labeled 'Invoice.pdf.exe'. What should you do?",
-      options: [
-        "Open it to see what the invoice is for",
-        "Don't open it - the double extension is suspicious",
-        "Forward it to accounting to handle",
-        "Save it to desktop for later review"
-      ],
-      correct: 1
+      icon: Brain,
+      title: "AI Tool Finder for SMBs",
+      description: "Discover AI tools that fit your business goals and budget",
+      link: "/tools/ai-finder",
+      badge: "Tool of the Month"
+    },
+    {
+      icon: Shield,
+      title: "Cybersecurity Risk Score Calculator",
+      description: "Get a quick snapshot of your business's security posture",
+      link: "/tools/security-score"
+    },
+    {
+      icon: MonitorSpeaker,
+      title: "Remote Work Security Assessment",
+      description: "Evaluate the security readiness of your remote or hybrid workforce",
+      link: "/tools/remote-work-assessment"
+    },
+    {
+      icon: ShieldCheck,
+      title: "Compliance Gap Analyzer",
+      description: "Identify gaps in your business's compliance with key regulations like HIPAA or GDPR",
+      link: "/tools/compliance-gap-analyzer"
     }
   ];
 
@@ -103,150 +89,39 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* Interactive Tools */}
+      {/* Free Tools Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="section-header">Interactive IT Tools</h2>
+            <h2 className="section-header">Free Tools for Baltimore Businesses</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Use our free tools to assess your current IT situation and identify areas for improvement.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* IT Cost Calculator */}
-            <Card className="service-card">
-              <CardHeader className="text-center">
-                <Calculator className="h-12 w-12 text-primary mx-auto mb-4" />
-                <CardTitle className="text-2xl">Office IT Cost Calculator</CardTitle>
-                <CardDescription>
-                  Calculate your recommended IT budget and identify potential savings.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Number of Employees</label>
-                    <input
-                      type="number"
-                      className="w-full p-3 border border-input rounded-md"
-                      placeholder="Enter number of employees"
-                      value={costData.employees}
-                      onChange={(e) => setCostData({...costData, employees: e.target.value})}
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Number of Servers</label>
-                    <input
-                      type="number"
-                      className="w-full p-3 border border-input rounded-md"
-                      placeholder="Enter number of servers"
-                      value={costData.servers}
-                      onChange={(e) => setCostData({...costData, servers: e.target.value})}
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Current Monthly IT Spend</label>
-                    <input
-                      type="number"
-                      className="w-full p-3 border border-input rounded-md"
-                      placeholder="Enter current monthly spend"
-                      value={costData.currentItSpend}
-                      onChange={(e) => setCostData({...costData, currentItSpend: e.target.value})}
-                    />
-                  </div>
-                </div>
-
-                {costData.employees && (
-                  <div className="bg-accent/30 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">Your Results:</h4>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span>Recommended Monthly Budget:</span>
-                        <span className="font-medium">${calculateCosts().recommendedSpend}</span>
-                      </div>
-                      {calculateCosts().potentialSavings > 0 && (
-                        <div className="flex justify-between text-primary">
-                          <span>Potential Monthly Savings:</span>
-                          <span className="font-medium">${calculateCosts().potentialSavings}</span>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
-
-                <Button variant="service" className="w-full" asChild>
-                  <Link to="/contact">Get Detailed Assessment</Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Phishing Test */}
-            <Card className="service-card">
-              <CardHeader className="text-center">
-                <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
-                <CardTitle className="text-2xl">Phishing Quick Test</CardTitle>
-                <CardDescription>
-                  Test your ability to identify phishing emails and improve your security awareness.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                {currentQuestion < phishingQuestions.length ? (
-                  <div className="space-y-4">
-                    <div className="text-sm text-muted-foreground">
-                      Question {currentQuestion + 1} of {phishingQuestions.length}
-                    </div>
-                    
-                    <h4 className="font-semibold">
-                      {phishingQuestions[currentQuestion].question}
-                    </h4>
-                    
-                    <div className="space-y-2">
-                      {phishingQuestions[currentQuestion].options.map((option, index) => (
-                        <button
-                          key={index}
-                          className="w-full p-3 text-left border border-input rounded-md hover:bg-accent transition-colors"
-                          onClick={() => {
-                            if (index === phishingQuestions[currentQuestion].correct) {
-                              setPhishingScore(phishingScore + 1);
-                            }
-                            setCurrentQuestion(currentQuestion + 1);
-                          }}
-                        >
-                          {option}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <div className="text-center space-y-4">
-                    <h4 className="text-2xl font-bold">Test Complete!</h4>
-                    <div className="text-4xl font-bold text-primary">
-                      {phishingScore}/{phishingQuestions.length}
-                    </div>
-                    <p className="text-muted-foreground">
-                      {phishingScore === phishingQuestions.length 
-                        ? "Perfect! You have excellent phishing awareness."
-                        : phishingScore >= 2
-                        ? "Good job! Consider additional security training."
-                        : "Your team would benefit from security awareness training."
-                      }
-                    </p>
-                    <Button 
-                      variant="service" 
-                      onClick={() => {
-                        setCurrentQuestion(0);
-                        setPhishingScore(0);
-                      }}
-                    >
-                      Retake Test
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {toolCards.map((tool, index) => {
+              const IconComponent = tool.icon;
+              return (
+                <Card key={index} className="service-card relative">
+                  {tool.badge && (
+                    <Badge className="absolute -top-2 -right-2 bg-[#FFD700] text-black text-xs font-semibold px-2 py-1 rounded">
+                      {tool.badge}
+                    </Badge>
+                  )}
+                  <CardHeader className="text-center">
+                    <IconComponent className="h-12 w-12 text-primary mx-auto mb-4" />
+                    <CardTitle className="text-xl">{tool.title}</CardTitle>
+                    <CardDescription>{tool.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <Button variant="service" className="w-full" asChild>
+                      <Link to={tool.link}>Try Tool</Link>
                     </Button>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>

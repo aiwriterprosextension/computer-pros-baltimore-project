@@ -32,6 +32,12 @@ import MedicalOffices from "./pages/industries/MedicalOffices";
 import Accountants from "./pages/industries/Accountants";
 import ProfessionalServices from "./pages/industries/ProfessionalServices";
 import ScrollToTop from "./components/ScrollToTop";
+import ITCostCalculator from "./pages/tools/ITCostCalculator";
+import PhishingTest from "./pages/tools/PhishingTest";
+import AIToolFinder from "./pages/tools/AIToolFinder";
+import SecurityScore from "./pages/tools/SecurityScore";
+import RemoteWorkAssessment from "./pages/tools/RemoteWorkAssessment";
+import ComplianceGapAnalyzer from "./pages/tools/ComplianceGapAnalyzer";
 
 const queryClient = new QueryClient();
 
@@ -68,6 +74,14 @@ const App = () => (
             <Route path="/industries/medical-offices" element={<MedicalOffices />} />
             <Route path="/industries/accountants" element={<Accountants />} />
             <Route path="/industries/professional-services" element={<ProfessionalServices />} />
+            
+            {/* Tool Pages */}
+            <Route path="/tools/it-cost" element={<ITCostCalculator />} />
+            <Route path="/tools/phishing-test" element={<PhishingTest />} />
+            <Route path="/tools/ai-finder" element={<AIToolFinder />} />
+            <Route path="/tools/security-score" element={<SecurityScore />} />
+            <Route path="/tools/remote-work-assessment" element={<RemoteWorkAssessment />} />
+            <Route path="/tools/compliance-gap-analyzer" element={<ComplianceGapAnalyzer />} />
             
             {/* Funnel Pages */}
             <Route path="/booking" element={<Booking />} />
