@@ -109,7 +109,7 @@ const About = () => {
                 Our Expert IT Team
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Our team of 15+ certified IT professionals brings decades of combined experience supporting Baltimore businesses. From cybersecurity specialists to cloud integration experts, we're dedicated to keeping your firm running smoothly.
+                Our team of 15+ certified IT professionals brings decades of combined experience supporting Baltimore businesses. From cybersecurity specialists to cloud integration experts, we're dedicated to keeping your firm running smoothly. Ready to assess your IT needs? Try our <Link to="/tools/security-score" className="text-primary hover:underline">free Security Score assessment</Link> to see how we can help.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start space-x-3">
@@ -150,7 +150,7 @@ const About = () => {
             </h2>
             <div className="text-center mb-12">
               <p className="text-lg text-muted-foreground mb-6">
-                Since 2010, Computer Pros has supported over 600 Baltimore businesses with comprehensive managed IT services, advanced cybersecurity protection, and cutting-edge AI enablement. We've helped firms across industries—consulting, legal, financial, medical, and more—stay secure, compliant, and productive.
+                Since 2010, Computer Pros has supported over 600 Baltimore businesses with comprehensive <Link to="/services/managed-services" className="text-primary hover:underline">managed IT services</Link>, advanced <Link to="/services/cybersecurity" className="text-primary hover:underline">cybersecurity protection</Link>, and cutting-edge <Link to="/services/ai-enablement" className="text-primary hover:underline">AI enablement</Link>. We've helped firms across industries—consulting, legal, financial, medical, and more—stay secure, compliant, and productive.
               </p>
             </div>
 
@@ -184,7 +184,7 @@ const About = () => {
               Our Mission: Empowering Baltimore Businesses
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              At Computer Pros, our mission is to empower Baltimore's professional service firms with technology that drives growth and protects their future. We combine innovative tools like AI automation and cloud collaboration with reliable, proactive support to help your firm thrive in an increasingly digital world.
+              At Computer Pros, our mission is to empower Baltimore's professional service firms with technology that drives growth and protects their future. We combine innovative tools like <Link to="/services/ai-enablement" className="text-primary hover:underline">AI automation</Link> and <Link to="/services/microsoft-365" className="text-primary hover:underline">cloud collaboration</Link> with reliable, proactive support to help your firm thrive in an increasingly digital world.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
