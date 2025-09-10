@@ -46,9 +46,13 @@ const Footer = () => {
           <div className="lg:ml-4">
             <h3 className="font-semibold text-[#E01010] mb-4">Free Resources</h3>
             <ul className="space-y-2">
-              <li><Link to="/free-checklist" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">IT Checklist</Link></li>
-              <li><Link to="/tools/it-cost" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Cost Calculator</Link></li>
+              <li><Link to="/tools/it-cost" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">IT Cost Calculator</Link></li>
               <li><Link to="/tools/phishing-test" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Phishing Test</Link></li>
+              <li><Link to="/tools/ai-finder" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">AI Tool Finder</Link></li>
+              <li><Link to="/tools/security-score" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Security Score</Link></li>
+              <li><Link to="/tools/remote-work-assessment" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Remote Work Assessment</Link></li>
+              <li><Link to="/tools/compliance-gap-analyzer" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Compliance Gap Analyzer</Link></li>
+              <li><Link to="/free-checklist" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Free IT Checklist</Link></li>
               <li><Link to="/booking" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Book Assessment</Link></li>
               <li><Link to="/blog" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Blog</Link></li>
             </ul>
@@ -60,8 +64,9 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/services/managed-services" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Managed Services</Link></li>
               <li><Link to="/services/cybersecurity" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Cybersecurity</Link></li>
+              <li><Link to="/services/microsoft-365" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Microsoft 365 & Google</Link></li>
               <li><Link to="/services/ai-enablement" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">AI Enablement</Link></li>
-              <li><Link to="/services/pricing" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Pricing</Link></li>
+              <li><Link to="/services/projects-migrations" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Projects & Migrations</Link></li>
             </ul>
           </div>
 

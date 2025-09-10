@@ -36,6 +36,15 @@ const Header = () => {
     { title: "Professional Services", href: "/industries/professional-services" },
   ];
 
+  const toolLinks = [
+    { title: "IT Cost Calculator", href: "/tools/it-cost" },
+    { title: "Phishing Test", href: "/tools/phishing-test" },
+    { title: "AI Tool Finder", href: "/tools/ai-finder" },
+    { title: "Security Score", href: "/tools/security-score" },
+    { title: "Remote Work Assessment", href: "/tools/remote-work-assessment" },
+    { title: "Compliance Gap Analyzer", href: "/tools/compliance-gap-analyzer" },
+  ];
+
   return (
     <header className="bg-background border-b border-border sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4 py-4">
@@ -99,12 +108,35 @@ const Header = () => {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <Link 
-              to="/resources" 
-              className={`nav-link ${isActive('/resources') ? 'text-primary font-semibold' : ''}`}
-            >
-              Resources
-            </Link>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="nav-link">Resources</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-3 p-6 w-[400px] lg:w-[500px]">
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="/resources"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">All Resources</div>
+                        </Link>
+                      </NavigationMenuLink>
+                      {toolLinks.map((tool) => (
+                        <NavigationMenuLink key={tool.href} asChild>
+                          <Link
+                            to={tool.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">{tool.title}</div>
+                          </Link>
+                        </NavigationMenuLink>
+                      ))}
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
             
             <Link 
               to="/blog" 
@@ -176,7 +208,19 @@ const Header = () => {
                 ))}
               </div>
               
-              <Link to="/resources" className="nav-link py-2">Resources</Link>
+              <div className="space-y-2">
+                <div className="font-semibold text-primary">Resources</div>
+                <Link to="/resources" className="nav-link py-1 pl-4 block text-sm">All Resources</Link>
+                {toolLinks.map((tool) => (
+                  <Link 
+                    key={tool.href}
+                    to={tool.href} 
+                    className="nav-link py-1 pl-4 block text-sm"
+                  >
+                    {tool.title}
+                  </Link>
+                ))}
+              </div>
               <Link to="/blog" className="nav-link py-2">Blog</Link>
               <Link to="/about" className="nav-link py-2">About Us</Link>
               <Link to="/contact" className="nav-link py-2">Contact</Link>
