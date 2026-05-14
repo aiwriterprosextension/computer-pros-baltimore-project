@@ -4,23 +4,29 @@ import { Sparkles } from "lucide-react";
 const Cleaning = () => (
   <IndustryPage
     slug="cleaning"
-    name="House Cleaning Companies"
-    shortName="House Cleaning"
+    trade="House Cleaning"
+    tradeLong="House Cleaning Companies"
     Icon={Sparkles}
-    heroTitle="Websites & AI for Baltimore House Cleaning Companies"
-    heroSubtitle="Online booking, automatic reminders, and review automation — built for residential cleaning crews."
-    benefits={[
-      { title: "Instant Online Booking", description: "Customers pick a date, get a quote, and book — without picking up the phone." },
-      { title: "Appointment Reminder Texts", description: "Automated reminders cut no-shows and last-minute cancellations dramatically." },
-      { title: "Review Requests on Autopilot", description: "Texts go out after every clean. More 5-star reviews mean more bookings." },
-      { title: "Recurring Customer Sign-ups", description: "Weekly, biweekly, and monthly recurring schedules handled automatically." },
+    painPoints={[
+      { title: "Phone Tag Eats Your Day", description: "Every booking is a 4-text back-and-forth to confirm a date, address, and price. You're a scheduler, not an owner." },
+      { title: "Last-Minute Cancellations Kill Margins", description: "No reminder system means customers forget — and your crews show up to a locked door." },
+      { title: "Repeat Customers Get No Easy Path Back", description: "Without recurring booking, customers re-book once… maybe… then drift away to a competitor with an app." },
     ]}
-    faqs={[
-      { question: "Can customers really book and pay online?", answer: "Yes. We can integrate booking with payment, deposits, or just a request-to-book flow — your call." },
-      { question: "Will reminders go to text or email?", answer: "Both, if you want. Most cleaning clients see the best results with a 24-hour text reminder." },
-      { question: "Do you help with branding?", answer: "We can refresh your logo and brand colors as part of the website build." },
-      { question: "How long until I see more bookings?", answer: "Most cleaning clients see a meaningful increase in online bookings within 30 days of launching." },
+    helpPoints={{
+      website: "Online booking right on the homepage — customers pick a date, see the price, and book in under 60 seconds.",
+      ai: "Automated reminder texts the day before each clean cut no-shows dramatically, plus review request texts after every job.",
+      care: "Recurring booking automation handles weekly, biweekly, and monthly schedules — no spreadsheets, no chasing.",
+    }}
+    stats={[
+      { value: "78%", label: "of bookings now happen online" },
+      { value: "−81%", label: "no-shows after reminders launched" },
+      { value: "32", label: "new 5-star reviews in 60 days" },
     ]}
+    testimonial={{
+      quote: "I used to spend 2 hours a day texting to confirm appointments. Now customers book themselves, get a reminder, and we get a review the next morning. I run a real business now.",
+      author: "Tina P.",
+      company: "Owner, Sparkle Sisters Cleaning",
+    }}
   />
 );
 

@@ -4,23 +4,29 @@ import { Droplet } from "lucide-react";
 const Plumbing = () => (
   <IndustryPage
     slug="plumbing"
-    name="Plumbing & Drain Companies"
-    shortName="Plumbing"
+    trade="Plumbing"
+    tradeLong="Plumbing & Drain Companies"
     Icon={Droplet}
-    heroTitle="Websites & AI for Baltimore Plumbers"
-    heroSubtitle="Stop losing emergency leads to competitors. Capture, qualify, and book every call — automatically."
-    benefits={[
-      { title: "24/7 Emergency Lead Capture", description: "AI chat handles after-hours leaks and clogs and books the slot for the morning." },
-      { title: "Click-to-Call That Actually Works", description: "Our sites are built so every page makes calling you a one-tap action." },
-      { title: "Auto Review Texts", description: "Send a review request the moment the job is done — when customers are most likely to leave 5 stars." },
-      { title: "Local SEO for Every Service Area", description: "Rank for plumber-near-me searches across Baltimore, Towson, Columbia, and Ellicott City." },
+    painPoints={[
+      { title: "Burst Pipes Don't Wait for Business Hours", description: "Customers with flooding basements at 2am call until someone answers. If that's not you, it's your competitor." },
+      { title: "Site Doesn't Show Up on Google", description: "You're not in the local map pack for 'plumber near me' — so 70% of new leads never even see you." },
+      { title: "Quote Requests Go Cold", description: "Estimates sent and forgotten. No follow-up means most never convert into jobs." },
     ]}
-    faqs={[
-      { question: "Can the AI chat handle emergency calls overnight?", answer: "Yes. It collects details, gives an honest ETA, and books the slot. You see it first thing in the morning." },
-      { question: "Will my site rank in Google Maps?", answer: "We optimize your Google Business Profile and local SEO so you show up in the map pack for plumbing searches in your service area." },
-      { question: "Can you migrate my existing site?", answer: "Yes — we'll rebuild it on WordPress with all your existing content and reviews intact." },
-      { question: "Do you only work with big plumbing companies?", answer: "No. We work with everyone from solo plumbers to 15-truck shops." },
+    helpPoints={{
+      website: "Fast mobile site optimized for emergency search terms, with one-tap call buttons on every page.",
+      ai: "AI chat handles overnight leaks, drain backups, and water heater failures — captures the job and books a morning slot.",
+      care: "Local SEO maintenance so you stay ranked in the Baltimore, Towson, and Columbia map pack month after month.",
+    }}
+    stats={[
+      { value: "2.8x", label: "more emergency calls captured" },
+      { value: "Top 3", label: "Google Maps ranking in 90 days" },
+      { value: "62%", label: "quote-to-job conversion" },
     ]}
+    testimonial={{
+      quote: "Before Computer Pros our website was an embarrassment. Now we rank #2 in Maps for plumber Baltimore and the AI chat books overnight calls while I sleep. We added a second truck.",
+      author: "Dave M.",
+      company: "Owner, Charm City Plumbing & Drain",
+    }}
   />
 );
 

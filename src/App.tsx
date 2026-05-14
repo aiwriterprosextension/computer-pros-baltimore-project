@@ -21,8 +21,8 @@ import CookiePolicy from "./pages/legal/CookiePolicy";
 import BusinessAssociateAgreement from "./pages/legal/BusinessAssociateAgreement";
 import NotFound from "./pages/NotFound";
 import Booking from "./pages/Booking";
-import FreeChecklist from "./pages/FreeChecklist";
-import ChecklistThankYou from "./pages/ChecklistThankYou";
+import FreeAudit from "./pages/FreeChecklist";
+import AuditThankYou from "./pages/ChecklistThankYou";
 import HVAC from "./pages/industries/HVAC";
 import Plumbing from "./pages/industries/Plumbing";
 import Landscaping from "./pages/industries/Landscaping";
@@ -77,9 +77,10 @@ const App = () => (
 
             {/* Funnel Pages */}
             <Route path="/booking" element={<Booking />} />
-            <Route path="/free-audit" element={<FreeChecklist />} />
-            <Route path="/free-checklist" element={<FreeChecklist />} />
-            <Route path="/checklist-thank-you" element={<ChecklistThankYou />} />
+            <Route path="/free-audit" element={<FreeAudit />} />
+            <Route path="/free-checklist" element={<FreeAudit />} />
+            <Route path="/audit-thank-you" element={<AuditThankYou />} />
+            <Route path="/checklist-thank-you" element={<AuditThankYou />} />
 
             {/* Legal Pages */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
