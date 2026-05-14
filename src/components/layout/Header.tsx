@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -19,30 +18,17 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const serviceLinks = [
-    { title: "Managed Services", href: "/services/managed-services" },
-    { title: "Cybersecurity", href: "/services/cybersecurity" },
-    { title: "Microsoft 365 & Google Workspace", href: "/services/microsoft-365" },
-    { title: "AI Enablement", href: "/services/ai-enablement" },
-    { title: "Projects & Migrations", href: "/services/projects-migrations" },
-    { title: "Support Plans & Pricing", href: "/services/pricing" },
+    { title: "Professional Websites", href: "/services/websites" },
+    { title: "AI Automation", href: "/services/ai-automation" },
+    { title: "Monthly Care Plans", href: "/services/care-plans" },
+    { title: "Pricing", href: "/services/pricing" },
   ];
 
   const industryLinks = [
-    { title: "Law Firms", href: "/industries/law-firms" },
-    { title: "Dentists", href: "/industries/dental-practices" },
-    { title: "Property Managers", href: "/industries/property-managers" },
-    { title: "Medical Offices", href: "/industries/medical-offices" },
-    { title: "Accountants", href: "/industries/accountants" },
-    { title: "Professional Services", href: "/industries/professional-services" },
-  ];
-
-  const toolLinks = [
-    { title: "IT Cost Calculator", href: "/tools/it-cost" },
-    { title: "Phishing Test", href: "/tools/phishing-test" },
-    { title: "AI Tool Finder", href: "/tools/ai-finder" },
-    { title: "Security Score", href: "/tools/security-score" },
-    { title: "Remote Work Assessment", href: "/tools/remote-work-assessment" },
-    { title: "Compliance Gap Analyzer", href: "/tools/compliance-gap-analyzer" },
+    { title: "HVAC Companies", href: "/industries/hvac" },
+    { title: "Plumbing & Drain", href: "/industries/plumbing" },
+    { title: "Landscaping & Lawn", href: "/industries/landscaping" },
+    { title: "House Cleaning", href: "/industries/cleaning" },
   ];
 
   return (
@@ -51,9 +37,9 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img 
-              src="/images/computer-pros-logo-optimized.webp" 
-              alt="Computer Pros - We Make IT Work" 
+            <img
+              src="/images/computer-pros-logo-optimized.webp"
+              alt="Computer Pros - We Make IT Work"
               className="h-12 w-auto"
               width="128"
               height="48"
@@ -62,8 +48,8 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               className={`nav-link ${isActive('/') ? 'text-primary font-semibold' : ''}`}
             >
               Home
@@ -108,52 +94,22 @@ const Header = () => {
               </NavigationMenuList>
             </NavigationMenu>
 
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="nav-link">Resources</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid gap-3 p-6 w-[400px] lg:w-[500px]">
-                      <NavigationMenuLink asChild>
-                        <Link
-                          to="/resources"
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-none">All Resources</div>
-                        </Link>
-                      </NavigationMenuLink>
-                      {toolLinks.map((tool) => (
-                        <NavigationMenuLink key={tool.href} asChild>
-                          <Link
-                            to={tool.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium leading-none">{tool.title}</div>
-                          </Link>
-                        </NavigationMenuLink>
-                      ))}
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-            
-            <Link 
-              to="/blog" 
+            <Link
+              to="/blog"
               className={`nav-link ${isActive('/blog') ? 'text-primary font-semibold' : ''}`}
             >
               Blog
             </Link>
-            
-            <Link 
-              to="/about" 
+
+            <Link
+              to="/about"
               className={`nav-link ${isActive('/about') ? 'text-primary font-semibold' : ''}`}
             >
               About Us
             </Link>
-            
-            <Link 
-              to="/contact" 
+
+            <Link
+              to="/contact"
               className={`nav-link ${isActive('/contact') ? 'text-primary font-semibold' : ''}`}
             >
               Contact
@@ -163,7 +119,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Button variant="hero" size="default" className="px-4 py-2 text-sm" asChild>
-              <Link to="/free-checklist">Free Checklist</Link>
+              <Link to="/free-audit">Free AI Audit</Link>
             </Button>
           </div>
 
@@ -181,52 +137,39 @@ const Header = () => {
           <nav className="lg:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col space-y-4">
               <Link to="/" className="nav-link py-2">Home</Link>
-              
+
               <div className="space-y-2">
                 <div className="font-semibold text-primary">Services</div>
                 {serviceLinks.map((service) => (
-                  <Link 
+                  <Link
                     key={service.href}
-                    to={service.href} 
+                    to={service.href}
                     className="nav-link py-1 pl-4 block text-sm"
                   >
                     {service.title}
                   </Link>
                 ))}
               </div>
-              
+
               <div className="space-y-2">
                 <div className="font-semibold text-primary">Industries</div>
                 {industryLinks.map((industry) => (
-                  <Link 
+                  <Link
                     key={industry.href}
-                    to={industry.href} 
+                    to={industry.href}
                     className="nav-link py-1 pl-4 block text-sm"
                   >
                     {industry.title}
                   </Link>
                 ))}
               </div>
-              
-              <div className="space-y-2">
-                <div className="font-semibold text-primary">Resources</div>
-                <Link to="/resources" className="nav-link py-1 pl-4 block text-sm">All Resources</Link>
-                {toolLinks.map((tool) => (
-                  <Link 
-                    key={tool.href}
-                    to={tool.href} 
-                    className="nav-link py-1 pl-4 block text-sm"
-                  >
-                    {tool.title}
-                  </Link>
-                ))}
-              </div>
+
               <Link to="/blog" className="nav-link py-2">Blog</Link>
               <Link to="/about" className="nav-link py-2">About Us</Link>
               <Link to="/contact" className="nav-link py-2">Contact</Link>
-              
+
               <Button variant="hero" size="default" className="w-full mt-4 px-4 py-2 text-sm" asChild>
-                <Link to="/free-checklist">Free Checklist</Link>
+                <Link to="/free-audit">Free AI Audit</Link>
               </Button>
             </div>
           </nav>

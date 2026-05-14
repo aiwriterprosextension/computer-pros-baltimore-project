@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 const Footer = () => {
@@ -11,21 +10,40 @@ const Footer = () => {
     { title: "Business Associate Agreement", href: "/business-associate-agreement" },
   ];
 
+  const serviceLinks = [
+    { title: "Professional Websites", href: "/services/websites" },
+    { title: "AI Automation", href: "/services/ai-automation" },
+    { title: "Monthly Care Plans", href: "/services/care-plans" },
+    { title: "Pricing", href: "/services/pricing" },
+  ];
+
+  const industryLinks = [
+    { title: "HVAC Companies", href: "/industries/hvac" },
+    { title: "Plumbing & Drain", href: "/industries/plumbing" },
+    { title: "Landscaping & Lawn", href: "/industries/landscaping" },
+    { title: "House Cleaning", href: "/industries/cleaning" },
+  ];
+
+  const quickLinks = [
+    { title: "Home", href: "/" },
+    { title: "About", href: "/about" },
+    { title: "Blog", href: "/blog" },
+    { title: "Contact", href: "/contact" },
+    { title: "Free AI Audit", href: "/free-audit" },
+  ];
+
   return (
     <footer className="bg-secondary text-secondary-foreground">
-      {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
           {/* Company Info */}
-          <div>
+          <div className="lg:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-4">
               <div className="text-xl font-bold text-primary-foreground">Computer Pros</div>
             </Link>
-            <p className="text-secondary-foreground/80 mb-6 max-w-md">
-              Professional managed IT services, cybersecurity, and AI enablement for small 
-              businesses in Baltimore. Reliable technology support you can trust.
+            <p className="text-secondary-foreground/80 mb-6 text-sm">
+              Websites, AI automation, and care plans for Baltimore home service businesses.
             </p>
-            
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-primary" />
@@ -42,44 +60,49 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Free Resources */}
-          <div className="lg:ml-4">
-            <h3 className="font-semibold text-[#E01010] mb-4">Free Resources</h3>
-            <ul className="space-y-2">
-              <li><Link to="/tools/it-cost" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">IT Cost Calculator</Link></li>
-              <li><Link to="/tools/phishing-test" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Phishing Test</Link></li>
-              <li><Link to="/tools/ai-finder" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">AI Tool Finder</Link></li>
-              <li><Link to="/tools/security-score" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Security Score</Link></li>
-              <li><Link to="/tools/remote-work-assessment" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Remote Work Assessment</Link></li>
-              <li><Link to="/tools/compliance-gap-analyzer" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Compliance Gap Analyzer</Link></li>
-              <li><Link to="/free-checklist" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Free IT Checklist</Link></li>
-              <li><Link to="/booking" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Book Assessment</Link></li>
-              <li><Link to="/blog" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Blog</Link></li>
-            </ul>
-          </div>
-
           {/* Services */}
           <div>
             <h3 className="font-semibold text-[#E01010] mb-4">Services</h3>
             <ul className="space-y-2">
-              <li><Link to="/services/managed-services" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Managed Services</Link></li>
-              <li><Link to="/services/cybersecurity" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Cybersecurity</Link></li>
-              <li><Link to="/services/microsoft-365" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Microsoft 365 & Google</Link></li>
-              <li><Link to="/services/ai-enablement" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">AI Enablement</Link></li>
-              <li><Link to="/services/projects-migrations" className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">Projects & Migrations</Link></li>
+              {serviceLinks.map((l) => (
+                <li key={l.href}>
+                  <Link to={l.href} className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">{l.title}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Legal Links */}
+          {/* Industries */}
+          <div>
+            <h3 className="font-semibold text-[#E01010] mb-4">Industries</h3>
+            <ul className="space-y-2">
+              {industryLinks.map((l) => (
+                <li key={l.href}>
+                  <Link to={l.href} className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">{l.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold text-[#E01010] mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              {quickLinks.map((l) => (
+                <li key={l.href}>
+                  <Link to={l.href} className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">{l.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
           <div>
             <h3 className="font-semibold text-[#E01010] mb-4">Legal</h3>
             <ul className="space-y-2">
               {legalLinks.map((link) => (
                 <li key={link.href}>
-                  <Link 
-                    to={link.href} 
-                    className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors"
-                  >
+                  <Link to={link.href} className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors">
                     {link.title}
                   </Link>
                 </li>
@@ -88,10 +111,9 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="border-t border-border/20 mt-12 pt-8 text-center">
           <p className="text-sm text-secondary-foreground/60">
-            © {new Date().getFullYear()} Computer Pros. All rights reserved. Professional IT services for Baltimore businesses.
+            © {new Date().getFullYear()} Computer Pros. All rights reserved. Baltimore home service business websites & automation.
           </p>
         </div>
       </div>
