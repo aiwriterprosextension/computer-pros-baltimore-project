@@ -2,190 +2,131 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Server, Zap, Cloud, Cog, Users, ArrowRight, CheckCircle, Calculator, ShieldCheck, ClipboardCheck, Briefcase, Brain, Lock, MonitorSpeaker } from "lucide-react";
+import { Globe, Bot, LifeBuoy, ArrowRight, CheckCircle, Wrench, Droplet, Trees, Sparkles, MapPin, Clock, Users } from "lucide-react";
 import heroImage from "@/assets/hero-it-services.jpg";
 import SEOHead from "@/components/SEOHead";
 import InlineCTABlock from "@/components/InlineCTABlock";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import HeroCards from "@/components/HeroCards";
 import TrustMetricsBar from "@/components/TrustMetricsBar";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import MiniCaseStudies from "@/components/MiniCaseStudies";
 import FAQSection from "@/components/FAQSection";
-import EmergencySupportButton from "@/components/EmergencySupportButton";
 
 const Home = () => {
   const services = [
     {
-      icon: Server,
-      title: "Managed IT Services",
-      description: "Complete IT infrastructure management and 24/7 monitoring for Baltimore businesses.",
-      href: "/services/managed-services",
-      features: ["24/7 Monitoring", "Proactive Maintenance", "Help Desk Support"]
+      icon: Globe,
+      title: "Professional Websites",
+      description: "Fast, mobile-first sites built to turn visitors into booked jobs — launched in 5–7 days.",
+      href: "/services/websites",
+      features: ["Mobile-first design", "Built-in SEO", "Online booking forms"],
     },
     {
-      icon: Shield,
-      title: "Cybersecurity",
-      description: "Advanced threat protection and compliance solutions to keep your business secure.",
-      href: "/services/cybersecurity",
-      features: ["Threat Detection", "Security Audits", "Compliance Support"]
+      icon: Bot,
+      title: "AI Automation",
+      description: "Chatbots, automated review requests, and lead follow-ups that work while you're on the job.",
+      href: "/services/ai-automation",
+      features: ["24/7 AI chat widget", "Review request texts", "Lead follow-up sequences"],
     },
     {
-      icon: Cloud,
-      title: "Microsoft 365 & Google Workspace",
-      description: "Cloud productivity solutions optimized for professional service firms.",
-      href: "/services/microsoft-365",
-      features: ["Setup & Migration", "User Training", "Integration Support"]
+      icon: LifeBuoy,
+      title: "Monthly Care Plans",
+      description: "Hosting, updates, backups, and friendly local support — all rolled into one predictable bill.",
+      href: "/services/care-plans",
+      features: ["Hosting & SSL", "Updates & backups", "Same-day support"],
     },
-    {
-      icon: Zap,
-      title: "AI Enablement",
-      description: "Implement AI tools to automate workflows and boost productivity.",
-      href: "/services/ai-enablement",
-      features: ["AI Strategy", "Tool Implementation", "Staff Training"]
-    },
-    {
-      icon: Cog,
-      title: "Projects & Migrations",
-      description: "Expert project management for IT upgrades and system migrations.",
-      href: "/services/projects-migrations",
-      features: ["System Upgrades", "Data Migration", "Project Management"]
-    },
-    {
-      icon: Users,
-      title: "Support Plans & Pricing",
-      description: "Flexible support plans designed for small professional firms in Baltimore.",
-      href: "/services/pricing",
-      features: ["Flexible Plans", "Transparent Pricing", "Local Support"]
-    },
+  ];
+
+  const industries = [
+    { icon: Wrench, title: "HVAC", description: "Heating & cooling companies", href: "/industries/hvac" },
+    { icon: Droplet, title: "Plumbing", description: "Plumbers & drain specialists", href: "/industries/plumbing" },
+    { icon: Trees, title: "Landscaping & Lawn Care", description: "Lawn, landscape & tree pros", href: "/industries/landscaping" },
+    { icon: Sparkles, title: "House Cleaning", description: "Residential cleaning crews", href: "/industries/cleaning" },
   ];
 
   const blogPosts = [
     {
-      title: "Cybersecurity Tips for Small Law Firms in Baltimore",
-      excerpt: "Essential security practices to protect sensitive client data and maintain compliance.",
-      category: "Cybersecurity",
+      title: "How Baltimore HVAC Companies Get More Google Reviews with AI",
+      excerpt: "The simple AI text automation that's helping local HVAC pros add 30+ reviews a month.",
+      category: "AI Automation",
       readTime: "5 min read",
-      href: "/blog/cybersecurity-tips-law-firms-baltimore"
+      href: "/blog/hvac-google-reviews-ai",
     },
     {
-      title: "AI Tools for Medical Practices in Baltimore",
-      excerpt: "How AI automation can streamline patient care and reduce administrative overhead.",
-      category: "AI in Business",
-      readTime: "7 min read",
-      href: "/blog/ai-tools-medical-practices-baltimore"
-    }
+      title: "Why Your Plumbing Website Is Losing You Jobs",
+      excerpt: "5 common website mistakes that send Baltimore homeowners to your competitors.",
+      category: "Websites",
+      readTime: "6 min read",
+      href: "/blog/plumbing-website-losing-jobs",
+    },
   ];
 
-  const benefits = [
-    "Local Baltimore IT experts who understand your business",
-    "24/7 monitoring and rapid response times",
-    "Compliance expertise for regulated industries",
-    "Predictable monthly IT costs with no surprises",
-    "Scalable solutions that grow with your business"
+  const whyUs = [
+    { icon: Wrench, title: "Built for your trade", description: "We design sites and automations specifically for HVAC, plumbing, landscaping, and cleaning businesses." },
+    { icon: MapPin, title: "Baltimore-based team", description: "Local people who answer the phone and understand your customers and your market." },
+    { icon: Clock, title: "Results in 30 days", description: "New site live, automations running, and more booked jobs hitting your calendar within a month." },
   ];
 
-  const industries = [
-    {
-      icon: Briefcase,
-      title: "Law Firms",
-      description: "Secure IT and compliance support for legal practices",
-      href: "/industries/law-firms"
-    },
-    {
-      icon: Shield,
-      title: "Dentists",
-      description: "HIPAA-grade cybersecurity for dental offices",
-      href: "/industries/dental-practices"
-    },
-    {
-      icon: Server,
-      title: "Property Managers",
-      description: "Smart IT and automation for tenant operations",
-      href: "/industries/property-managers"
-    },
-    {
-      icon: Cog,
-      title: "Medical Offices",
-      description: "AI-powered scheduling and EMR support",
-      href: "/industries/medical-offices"
-    },
-    {
-      icon: Calculator,
-      title: "Accountants",
-      description: "Cloud IT and fraud detection for financial firms",
-      href: "/industries/accountants"
-    },
-    {
-      icon: Users,
-      title: "Professional Services",
-      description: "Reliable IT for consultants, agencies, and service firms",
-      href: "/industries/professional-services"
-    }
+  const homeFaqs = [
+    { question: "How long does a new website take to launch?", answer: "Most home service business sites go live in 5–7 business days once we have your photos, services, and service area details." },
+    { question: "What does AI automation actually do for my business?", answer: "It answers customer questions on your site 24/7, texts customers to ask for Google reviews after jobs, and follows up with quote requests automatically — so no lead falls through the cracks." },
+    { question: "Do I have to sign a long contract?", answer: "No. Our monthly care plans are month-to-month. We earn your business every month." },
+    { question: "Do you only work with Baltimore companies?", answer: "We're based in Baltimore and focus on the Maryland metro area, but we serve home service businesses throughout the Mid-Atlantic." },
+    { question: "Can you help if I already have a website?", answer: "Yes. We can rebuild it, redesign it, or add AI automation on top of what you already have." },
   ];
 
   return (
     <div className="min-h-screen">
-      <SEOHead 
-        title="Computer Pros - Baltimore Managed IT, Cybersecurity & AI Services"
-        description="Professional managed IT services, cybersecurity, and AI enablement for small businesses in Baltimore. 24/7 monitoring, expert support, and transparent pricing."
-        keywords="Baltimore IT services, managed IT Baltimore, cybersecurity Baltimore, AI business automation, Microsoft 365 Baltimore, IT support Maryland"
+      <SEOHead
+        title="Computer Pros - Websites & AI Automation for Baltimore Home Service Businesses"
+        description="Professional websites, AI automation, and monthly care plans for Baltimore HVAC, plumbing, landscaping, and house cleaning companies. Launch in 5–7 days."
+        keywords="Baltimore HVAC website, plumber website Baltimore, landscaping website, house cleaning website, home service AI automation, Google reviews automation"
         canonicalUrl="https://computerpros-baltimore.com"
       />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-secondary via-secondary/95 to-primary/20">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-10"
           style={{ backgroundImage: `url(${heroImage})` }}
         />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <Badge variant="secondary" className="mb-6 text-sm font-medium">
-            Trusted by 100+ Baltimore Businesses
+            Trusted by 50+ Baltimore Home Service Businesses
           </Badge>
-          
+
           <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
-            Baltimore Managed IT, Cybersecurity, and AI Services
+            Baltimore's Home Service Businesses Run on Referrals. We Make Sure Your Tech Keeps Up.
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-secondary-foreground/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Reliable technology support for small professional firms in Baltimore. 
-            We handle your IT so you can focus on growing your business.
+            Professional websites, AI automation, and monthly care plans for HVAC, plumbing, landscaping, and cleaning companies.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button variant="hero" size="lg" asChild>
-              <Link to="/free-checklist">Take the Free IT Checklist</Link>
+              <Link to="/free-audit">Get My Free AI Audit</Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <Link to="/services/pricing">View Our Plans</Link>
+              <Link to="/services/pricing">See Our Plans</Link>
             </Button>
           </div>
-
-          {/* Hero Cards */}
-          <HeroCards />
         </div>
       </section>
 
       {/* Trust Metrics Bar */}
       <TrustMetricsBar />
 
-      {/* Why Choose Us */}
-      <WhyChooseUs />
-
-      {/* Services Overview */}
+      {/* Services */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="section-header">Comprehensive IT Solutions for Baltimore Businesses</h2>
+            <h2 className="section-header">What We Do for Home Service Pros</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              From cybersecurity to AI enablement, we provide the technology expertise 
-              your professional firm needs to thrive in the digital age.
+              Three simple things, done well: a great website, smart AI automation, and a care plan that keeps it all running.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
@@ -196,9 +137,7 @@ const Home = () => {
                       <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                     </div>
                     <CardTitle className="text-xl">{service.title}</CardTitle>
-                    <CardDescription className="text-base">
-                      {service.description}
-                    </CardDescription>
+                    <CardDescription className="text-base">{service.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2 mb-6">
@@ -220,44 +159,43 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonial Carousel */}
-      <TestimonialCarousel />
-
-      {/* Mini Case Studies */}
-      <MiniCaseStudies />
-
-      {/* AI Enablement Feature */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="section-header">AI-Powered Productivity</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Implement AI tools to automate workflows and boost productivity.
-          </p>
-          <div className="bg-accent/50 rounded-lg p-8 max-w-4xl mx-auto">
-            <div className="flex items-center justify-center mb-4">
-              <Zap className="h-12 w-12 text-primary" />
-            </div>
-            <p className="text-2xl font-semibold text-secondary mb-4">
-              Save 10+ hours/month with smart automation tools
-            </p>
-            <Button variant="hero" asChild>
-              <Link to="/services/ai-enablement">Learn About AI Services</Link>
-            </Button>
+      {/* Why Computer Pros */}
+      <section className="py-20 bg-accent/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="section-header">Why Computer Pros?</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {whyUs.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div key={idx} className="text-center p-6">
+                  <div className="inline-flex p-4 rounded-full bg-primary/10 mb-4">
+                    <Icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.description}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Industries We Serve */}
-      <section className="py-20 bg-accent/30">
+      {/* Testimonials */}
+      <TestimonialCarousel />
+
+      {/* Industries */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="section-header">Who We Serve</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Specialized IT solutions for Baltimore's professional service firms.
+              Specialized websites and automation for Baltimore's home service trades.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {industries.map((industry, index) => {
               const IconComponent = industry.icon;
               return (
@@ -265,9 +203,7 @@ const Home = () => {
                   <CardHeader>
                     <IconComponent className="h-12 w-12 text-primary mx-auto mb-4" />
                     <CardTitle className="text-xl">{industry.title}</CardTitle>
-                    <CardDescription className="text-base">
-                      {industry.description}
-                    </CardDescription>
+                    <CardDescription className="text-base">{industry.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <Button variant="service" className="w-full" asChild>
@@ -281,120 +217,21 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Free Tools Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="section-header">Free Tools for Baltimore Businesses</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Access our free tools and guides to improve your business technology and security.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="service-card">
-              <CardHeader>
-                <Calculator className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Office IT Cost Calculator</CardTitle>
-                <CardDescription>
-                  Calculate your current IT spending and identify potential savings.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button variant="service" className="w-full" asChild>
-                  <Link to="/tools/it-cost">Try Calculator</Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="service-card">
-              <CardHeader>
-                <ShieldCheck className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Phishing Quick Test</CardTitle>
-                <CardDescription>
-                  Test your ability to identify phishing emails and improve your security awareness.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button variant="service" className="w-full" asChild>
-                  <Link to="/tools/phishing-test">Take Test</Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="service-card">
-              <CardHeader>
-                <MonitorSpeaker className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Remote Work Security Assessment</CardTitle>
-                <CardDescription>
-                  Evaluate the security readiness of your remote or hybrid workforce.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button variant="service" className="w-full" asChild>
-                  <Link to="/remote-work-assessment">Take Assessment</Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="service-card">
-              <CardHeader>
-                <ShieldCheck className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Compliance Gap Analyzer</CardTitle>
-                <CardDescription>
-                  Identify gaps in your business's compliance with key regulations like HIPAA or GDPR.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button variant="service" className="w-full" asChild>
-                  <Link to="/compliance-gap-analyzer">Analyze Compliance</Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="service-card">
-              <CardHeader>
-                <Brain className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>AI Tool Finder for SMBs</CardTitle>
-                <CardDescription>
-                  Discover AI tools that fit your business goals and budget.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button variant="service" className="w-full" asChild>
-                  <Link to="/tools/ai-finder">Find AI Tools</Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="service-card">
-              <CardHeader>
-                <Lock className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Cybersecurity Risk Score Calculator</CardTitle>
-                <CardDescription>
-                  Get a quick snapshot of your business's security posture.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button variant="service" className="w-full" asChild>
-                  <Link to="/tools/security-score">Check Risk Score</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Inline CTA */}
-      <InlineCTABlock />
+      <InlineCTABlock
+        headline="Ready to Get More Booked Jobs?"
+        subheadline="Get a free AI audit and we'll show you exactly where you're losing leads — and how to fix it."
+        buttonText="Get My Free AI Audit"
+        buttonLink="/free-audit"
+      />
 
       {/* Blog Highlights */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="section-header">Latest IT Insights for Baltimore Businesses</h2>
+            <h2 className="section-header">From the Blog</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Stay informed with the latest cybersecurity tips, AI trends, and IT best practices.
+              Practical tips for Baltimore home service businesses.
             </p>
           </div>
 
@@ -426,13 +263,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <FAQSection />
+      {/* FAQ */}
+      <FAQSection faqs={homeFaqs} />
 
-      {/* Emergency Support Button */}
-      <EmergencySupportButton />
-
-      {/* Sticky Mobile CTA */}
       <StickyMobileCTA />
     </div>
   );

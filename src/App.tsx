@@ -5,11 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
-import ManagedServices from "./pages/services/ManagedServices";
-import Cybersecurity from "./pages/services/Cybersecurity";
-import Microsoft365 from "./pages/services/Microsoft365";
-import AIEnablement from "./pages/services/AIEnablement";
-import ProjectsMigrations from "./pages/services/ProjectsMigrations";
+import WebsiteDesign from "./pages/services/WebsiteDesign";
+import AIAutomation from "./pages/services/AIAutomation";
+import CarePlans from "./pages/services/CarePlans";
 import Pricing from "./pages/services/Pricing";
 import Resources from "./pages/Resources";
 import Blog from "./pages/Blog";
@@ -25,12 +23,10 @@ import NotFound from "./pages/NotFound";
 import Booking from "./pages/Booking";
 import FreeChecklist from "./pages/FreeChecklist";
 import ChecklistThankYou from "./pages/ChecklistThankYou";
-import LawFirms from "./pages/industries/LawFirms";
-import DentalPractices from "./pages/industries/DentalPractices";
-import PropertyManagers from "./pages/industries/PropertyManagers";
-import MedicalOffices from "./pages/industries/MedicalOffices";
-import Accountants from "./pages/industries/Accountants";
-import ProfessionalServices from "./pages/industries/ProfessionalServices";
+import HVAC from "./pages/industries/HVAC";
+import Plumbing from "./pages/industries/Plumbing";
+import Landscaping from "./pages/industries/Landscaping";
+import Cleaning from "./pages/industries/Cleaning";
 import ScrollToTop from "./components/ScrollToTop";
 import ITCostCalculator from "./pages/tools/ITCostCalculator";
 import PhishingTest from "./pages/tools/PhishingTest";
@@ -51,30 +47,26 @@ const App = () => (
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
-            
+
             {/* Service Pages */}
-            <Route path="/services/managed-services" element={<ManagedServices />} />
-            <Route path="/services/cybersecurity" element={<Cybersecurity />} />
-            <Route path="/services/microsoft-365" element={<Microsoft365 />} />
-            <Route path="/services/ai-enablement" element={<AIEnablement />} />
-            <Route path="/services/projects-migrations" element={<ProjectsMigrations />} />
+            <Route path="/services/websites" element={<WebsiteDesign />} />
+            <Route path="/services/ai-automation" element={<AIAutomation />} />
+            <Route path="/services/care-plans" element={<CarePlans />} />
             <Route path="/services/pricing" element={<Pricing />} />
-            
+
             {/* Main Pages */}
             <Route path="/resources" element={<Resources />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            
+
             {/* Industry Pages */}
-            <Route path="/industries/law-firms" element={<LawFirms />} />
-            <Route path="/industries/dental-practices" element={<DentalPractices />} />
-            <Route path="/industries/property-managers" element={<PropertyManagers />} />
-            <Route path="/industries/medical-offices" element={<MedicalOffices />} />
-            <Route path="/industries/accountants" element={<Accountants />} />
-            <Route path="/industries/professional-services" element={<ProfessionalServices />} />
-            
+            <Route path="/industries/hvac" element={<HVAC />} />
+            <Route path="/industries/plumbing" element={<Plumbing />} />
+            <Route path="/industries/landscaping" element={<Landscaping />} />
+            <Route path="/industries/cleaning" element={<Cleaning />} />
+
             {/* Tool Pages */}
             <Route path="/tools/it-cost" element={<ITCostCalculator />} />
             <Route path="/tools/phishing-test" element={<PhishingTest />} />
@@ -82,19 +74,20 @@ const App = () => (
             <Route path="/tools/security-score" element={<SecurityScore />} />
             <Route path="/tools/remote-work-assessment" element={<RemoteWorkAssessment />} />
             <Route path="/tools/compliance-gap-analyzer" element={<ComplianceGapAnalyzer />} />
-            
+
             {/* Funnel Pages */}
             <Route path="/booking" element={<Booking />} />
+            <Route path="/free-audit" element={<FreeChecklist />} />
             <Route path="/free-checklist" element={<FreeChecklist />} />
             <Route path="/checklist-thank-you" element={<ChecklistThankYou />} />
-            
+
             {/* Legal Pages */}
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/data-processing-agreement" element={<DataProcessingAgreement />} />
             <Route path="/cookie-policy" element={<CookiePolicy />} />
             <Route path="/business-associate-agreement" element={<BusinessAssociateAgreement />} />
-            
+
             {/* 404 Route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
