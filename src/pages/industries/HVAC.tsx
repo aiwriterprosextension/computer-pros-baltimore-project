@@ -4,23 +4,29 @@ import { Wrench } from "lucide-react";
 const HVAC = () => (
   <IndustryPage
     slug="hvac"
-    name="HVAC Companies"
-    shortName="HVAC"
+    trade="HVAC"
+    tradeLong="HVAC Companies"
     Icon={Wrench}
-    heroTitle="Websites & AI for Baltimore HVAC Companies"
-    heroSubtitle="Capture every emergency call, automate review requests, and book more jobs without lifting a finger."
-    benefits={[
-      { title: "Emergency Call Capture", description: "AI chat answers questions and books emergency service calls 24/7 — even at 2am." },
-      { title: "More Google Reviews", description: "Auto-text every customer after the job. More 5-star reviews mean more calls." },
-      { title: "Seasonal Maintenance Reminders", description: "Automated email and text reminders for tune-ups keep your trucks busy in shoulder seasons." },
-      { title: "Mobile-First Website", description: "75% of HVAC searches happen on phones. Your site needs to load fast and convert." },
+    painPoints={[
+      { title: "Missed Overnight Emergency Calls", description: "Heat goes out at 11pm — voicemail picks up, customer calls the next company on Google. Lead lost." },
+      { title: "Slow, Outdated Website", description: "Your site loads in 8 seconds on mobile. Homeowners searching 'AC repair near me' bounce before it loads." },
+      { title: "No Review Automation", description: "You finish 80 jobs a month but only get 2 Google reviews because no one's asking." },
     ]}
-    faqs={[
-      { question: "Can the AI chat actually book a service call?", answer: "Yes. It collects the customer's name, address, issue, and preferred time, then drops it straight into your inbox or CRM." },
-      { question: "How many reviews can I really get?", answer: "Most HVAC clients see 20–40 new Google reviews in the first 60 days of automated review requests." },
-      { question: "Do you integrate with ServiceTitan or Housecall Pro?", answer: "Yes — we connect lead forms and review automation to most major HVAC field service platforms." },
-      { question: "How fast can my site launch?", answer: "5–7 business days for a Starter site, 2–3 weeks for the AI-Powered Pro plan." },
+    helpPoints={{
+      website: "Mobile-first site that handles seasonal demand spikes with click-to-call on every page and clear emergency service messaging.",
+      ai: "24/7 AI chat captures and qualifies after-hours leaks, no-heat calls, and AC failures — then books them automatically.",
+      care: "Hosting tuned for traffic spikes during heat waves and cold snaps so your site never goes down when you need it most.",
+    }}
+    stats={[
+      { value: "47", label: "new Google reviews in 60 days" },
+      { value: "3.2x", label: "more after-hours bookings" },
+      { value: "5 sec", label: "average mobile load time" },
     ]}
+    testimonial={{
+      quote: "We were missing every overnight call. Now the AI books them and I see the job on my phone at 6am with the customer's address and what's wrong. Game changer during the summer rush.",
+      author: "Mike R.",
+      company: "Owner, Baltimore HVAC Service Co.",
+    }}
   />
 );
 

@@ -1,8 +1,35 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Mail } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  email: z.string().trim().email("Invalid email").max(255),
+  phone: z.string().trim().max(20).optional().or(z.literal("")),
+  businessType: z.string().min(1, "Please select your business type"),
+  message: z.string().trim().min(1, "Message is required").max(1000),
+});
 
 const Contact = () => {
+  const [data, setData] = useState({ name: "", email: "", phone: "", businessType: "", message: "" });
+  const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const r = contactSchema.safeParse(data);
+    if (!r.success) {
+      toast({ title: "Please check the form", description: r.error.issues[0]?.message, variant: "destructive" });
+      return;
+    }
+    toast({ title: "Message sent!", description: "We'll be in touch within 1 business day." });
+    setData({ name: "", email: "", phone: "", businessType: "", message: "" });
+  };
+
   return (
     <div className="min-h-screen">
       <section className="bg-gradient-to-br from-secondary via-secondary/95 to-primary/20 py-20">
@@ -12,7 +39,7 @@ const Contact = () => {
               Contact Computer Pros
             </h1>
             <p className="text-xl text-secondary-foreground/90 mb-8">
-              Ready to transform your IT? Get in touch for a free consultation.
+              Tell us about your home service business — we'll get back to you within 1 business day.
             </p>
           </div>
         </div>
@@ -25,24 +52,47 @@ const Contact = () => {
               <CardHeader>
                 <CardTitle className="text-2xl">Send us a Message</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium mb-2">Name</label>
-                  <input type="text" className="w-full p-3 border border-input rounded-md" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Email</label>
-                  <input type="email" className="w-full p-3 border border-input rounded-md" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Phone</label>
-                  <input type="tel" className="w-full p-3 border border-input rounded-md" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Message</label>
-                  <textarea className="w-full p-3 border border-input rounded-md h-32"></textarea>
-                </div>
-                <Button variant="hero" className="w-full">Send Message</Button>
+              <CardContent>
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                  <div>
+                    <Label htmlFor="c-name">Name *</Label>
+                    <input id="c-name" type="text" maxLength={100} value={data.name}
+                      onChange={(e) => setData({ ...data, name: e.target.value })}
+                      className="w-full p-3 border border-input rounded-md" required />
+                  </div>
+                  <div>
+                    <Label htmlFor="c-email">Email *</Label>
+                    <input id="c-email" type="email" maxLength={255} value={data.email}
+                      onChange={(e) => setData({ ...data, email: e.target.value })}
+                      className="w-full p-3 border border-input rounded-md" required />
+                  </div>
+                  <div>
+                    <Label htmlFor="c-phone">Phone</Label>
+                    <input id="c-phone" type="tel" maxLength={20} value={data.phone}
+                      onChange={(e) => setData({ ...data, phone: e.target.value })}
+                      className="w-full p-3 border border-input rounded-md" />
+                  </div>
+                  <div>
+                    <Label>Business type *</Label>
+                    <Select value={data.businessType} onValueChange={(v) => setData({ ...data, businessType: v })}>
+                      <SelectTrigger><SelectValue placeholder="Select your trade" /></SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="HVAC">HVAC</SelectItem>
+                        <SelectItem value="Plumbing">Plumbing</SelectItem>
+                        <SelectItem value="Landscaping">Landscaping</SelectItem>
+                        <SelectItem value="Cleaning">House Cleaning</SelectItem>
+                        <SelectItem value="Other">Other home service</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div>
+                    <Label htmlFor="c-msg">Message *</Label>
+                    <textarea id="c-msg" maxLength={1000} value={data.message}
+                      onChange={(e) => setData({ ...data, message: e.target.value })}
+                      className="w-full p-3 border border-input rounded-md h-32" required />
+                  </div>
+                  <Button type="submit" variant="hero" className="w-full">Send Message</Button>
+                </form>
               </CardContent>
             </Card>
 
@@ -65,7 +115,7 @@ const Contact = () => {
                     <Phone className="h-8 w-8 text-primary" />
                     <div>
                       <h3 className="font-semibold">Phone</h3>
-                      <p className="text-muted-foreground">(410) 555-TECH</p>
+                      <p className="text-muted-foreground">(443) 599-6441</p>
                     </div>
                   </div>
                 </CardContent>
@@ -77,7 +127,7 @@ const Contact = () => {
                     <Mail className="h-8 w-8 text-primary" />
                     <div>
                       <h3 className="font-semibold">Email</h3>
-                      <p className="text-muted-foreground">info@computerpros-baltimore.com</p>
+                      <p className="text-muted-foreground">info@computerprosllc.com</p>
                     </div>
                   </div>
                 </CardContent>

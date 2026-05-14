@@ -4,23 +4,29 @@ import { Trees } from "lucide-react";
 const Landscaping = () => (
   <IndustryPage
     slug="landscaping"
-    name="Landscaping & Lawn Care Companies"
-    shortName="Landscaping"
+    trade="Landscaping"
+    tradeLong="Landscaping & Lawn Care Companies"
     Icon={Trees}
-    heroTitle="Websites & AI for Baltimore Landscapers"
-    heroSubtitle="Show off your work, book seasonal contracts, and follow up with every quote request — automatically."
-    benefits={[
-      { title: "Stunning Project Galleries", description: "Before/after galleries that show off your best work and convert browsers into clients." },
-      { title: "Quote Request Automation", description: "Quote requests get an instant reply, then a follow-up sequence so leads don't go cold." },
-      { title: "Seasonal Booking Pushes", description: "Automated email blasts for spring cleanups, mulch installs, and fall leaf removal." },
-      { title: "Recurring Service Sign-ups", description: "Easy online sign-up for weekly mowing or seasonal contracts — no phone tag required." },
+    painPoints={[
+      { title: "Beautiful Work, Boring Website", description: "Your portfolio is your superpower — but your site doesn't show off the before/after photos that close the deal." },
+      { title: "Quote Requests Pile Up in Spring", description: "March hits and you have 50 quote requests you can't keep up with. Half go cold before you can follow up." },
+      { title: "No Recurring Revenue", description: "Every spring you start from zero with no easy way for repeat customers to re-sign for the season." },
     ]}
-    faqs={[
-      { question: "Can my site handle photo galleries?", answer: "Absolutely. Big, fast-loading project galleries are a core part of every landscaping site we build." },
-      { question: "Can customers book recurring lawn care online?", answer: "Yes. We integrate booking that handles one-time, weekly, biweekly, or seasonal services." },
-      { question: "Will the site work on mobile?", answer: "Mobile-first is our default — over 80% of landscaping searches happen on phones." },
-      { question: "Can you help with social media?", answer: "Yes — our Growth Suite plan includes 4 social posts a week, AI-assisted." },
+    helpPoints={{
+      website: "Stunning before/after project galleries that show off your best work and make pricing feel justified.",
+      ai: "Quote requests get an instant AI reply and a multi-step follow-up sequence so leads don't go cold during the spring rush.",
+      care: "Online recurring booking for weekly mowing, seasonal cleanups, and contract renewals — set up once, billed automatically.",
+    }}
+    stats={[
+      { value: "180+", label: "project gallery photos showcased" },
+      { value: "4.7x", label: "spring quote-to-contract rate" },
+      { value: "$38k", label: "added annual recurring revenue" },
     ]}
+    testimonial={{
+      quote: "The before-and-after gallery alone changed how customers see us. They book before even getting on a call. And the recurring booking system means I'm not chasing payments every Friday.",
+      author: "Carlos T.",
+      company: "Owner, Greenway Lawn & Landscape",
+    }}
   />
 );
 
